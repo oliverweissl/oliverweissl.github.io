@@ -1,46 +1,37 @@
 ---
 title: About
-author: ariestiyansyah
+author: oliverweissl
 layout: page
 ---
 
-  <img alt="" src="" width="200" height="200" />
+<img alt="" src="https://media.licdn.com/dms/image/v2/D4D03AQGvoHgBildvEA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718216223224?e=1732147200&v=beta&t=eqqn8DB0RNP-hwSqetT6Z7MaUk9DeWGyCCNegtNv3lM" width="200" height="200" />
 
-Hola, my name is __Rizky Ariestiyansyah__ and I’m a __Front End Developer & Business Strategist__ with equal parts interest in business, tax, management development, and writing.
+Hello, I’m Oliver Weissl, a researcher at fortiss and an incoming PhD candidate at the Technical University of Munich (TUM). My academic journey began with a Bachelor’s degree in Artificial Intelligence from VU Amsterdam, followed by a Master’s in Information Studies at the University of Amsterdam (UvA).
 
-I love to explore my brain, by day I am active as student and researcher and by night move like a Ninja. I 'm also leading training, teaching student and providing support to everyone who want to share their knowledge.
+My primary research interest lies in enhancing the interpretability of artificial intelligence systems. Currently, the outputs of deep learning models can often seem like guesswork, and I am passionate about addressing this challenge. By improving our understanding of these models, I aim to make AI more transparent and accessible, ultimately bridging the gap between complex algorithms and practical, actionable insights.
 
-I'm active as open source warrior, volunteering in non-profit organization like [Mozilla](https://mozillians.org/en-US/u/ariestiyansyah), [Fedora Project](http://fedoraproject.org), [IlmuBerbagi](http://ilmuberbagi.or.id), [IGOS Nusantara](http://igosnusantara.or.id), [XFCE](http://xfce.org), and [ID-CERT](http://www.cert.or.id). Highly motivated to become part of global movement, love to investing and all about buiness and finance.
+My work experiences are:
 
-I was worked at several company as full-time employeer and __freelancer__ like
- 
-- [Ministry of Public Work Indonesia](http://litbang.pu.go.id/)
-- [PT. Polatic Informatika Indonesia](http://polatic.co.id)
-- [Evolusi Network Studio](http://evonestudio.com)
+- Researcher @ [fortiss GmbH](https://www.fortiss.org/)
+- Research Assistant @ [CI Group - VU Amsterdam](https://cs.vu.nl/ci/)
+  
+  - My responibilites were development of [Revolve2](https://github.com/ci-group/revolve2), a simulator geared towards evolutionary computing in the domain of robotics.
+  - Assisting in scientific projects.
 
-Some of my happy clients are :
+- Teaching Assistant @ [VU Amsterdam](https://vu.nl/en)
 
-- [Kwarcab Pramuka Tangerang Selatan](http://pramukatangsel.or.id)
-- [PT. Valua Lidi Impresario](http://valuatraining.com) 
-- [PT. Andalan Global Sarana](http://www.properti1001.com)
-- [Pulsagame](http://pulsagame.com)
-- [Brili Agung the Inspiratormaker](http://briliagung.com)
-- [PT. Wise Pasific Venture](https://www.linkedin.com/company/8995616?goback=.anb_3942786_*2_*1_*1_*1_*1_*1&trk=prof-exp-company-name) 
-- Email me for more...
+  - Courses I have been teaching:
+  
+    - [Project Collective Intelligence](https://studiegids.vu.nl/en/Bachelor/2023-2024/artificial-intelligence/XB_0026#/)
+    - [Human-Computer Interaction](https://studiegids.vu.nl/en/Bachelor/2023-2024/artificial-intelligence/XB_0013#/)
+    - [Knowledge & Data](https://studiegids.vu.nl/en/Bachelor/2023-2024/artificial-intelligence/X_400083#/)
+    - [Machine Learning](https://studiegids.vu.nl/en/Bachelor/2023-2024/artificial-intelligence/X_400154#/)
+    - [Computational Intelligence](https://studiegids.vu.nl/en/Bachelor/2023-2024/artificial-intelligence/XB_0025#/)
 
-I had been a speaker at this university :
 
-- [Gunadarma University ](http://gunadarma.ac.id) 
-- [Trunojoyo University](http://trunojoyo.ac.id) 
-- [National Institute of Science and Technology](http://www.istn.ac.id/) 
-- [Budi Luhur University](http://budiluhur.ac.id) 
-- [LP3I](http://lp3i.ac.id) 
-- [STMIK NUSA MANDIRI](http://nusamandiri.ac.id) 
-- [STMI ( Ministry of Industry )](http://stmi.ac.id) 
-- [STMIK Masa Depan](http://masadepan.ac.id/) 
-- [Satya State University of Indonesia](http://usni.ac.id) 
 
-## Ping me!
 
-If you have any questions, comments, or would just like to __PING ME__, please don't hesitate to  [send me an email](mailto:ariestiyansyah.rizky@gmail.com). 
+## Get in contact
+
+If you have any questions or comments don't hesitate to  [send me an email](mailto:weissl@fortiss.org). 
 
