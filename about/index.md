@@ -4,9 +4,9 @@ author: oliverweissl
 layout: page
 ---
 
-<img alt="" src="https://media.licdn.com/dms/image/v2/D4D03AQGvoHgBildvEA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718216223224?e=1732147200&v=beta&t=eqqn8DB0RNP-hwSqetT6Z7MaUk9DeWGyCCNegtNv3lM" width="200" height="200" />
+<img alt="" src="/images/portrait.jpeg" width="200" height="200" />
 
-Hello, I’m Oliver Weissl, a researcher at fortiss and an incoming PhD candidate at the Technical University of Munich (TUM). My academic journey began with a Bachelor’s degree in Artificial Intelligence from VU Amsterdam, followed by a Master’s in Information Studies at the University of Amsterdam (UvA).
+Hello, I’m Oliver Weißl, a researcher at fortiss and an incoming PhD candidate at the Technical University of Munich (TUM). My academic journey began with a Bachelor’s degree in Artificial Intelligence from VU Amsterdam, followed by a Master’s in Information Studies at the University of Amsterdam (UvA).
 
 My primary research interest lies in enhancing the interpretability of artificial intelligence systems. Currently, the outputs of deep learning models can often seem like guesswork, and I am passionate about addressing this challenge. By improving our understanding of these models, I aim to make AI more transparent and accessible, ultimately bridging the gap between complex algorithms and practical, actionable insights.
 
