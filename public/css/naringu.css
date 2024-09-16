@@ -565,4 +565,7 @@ a.pagination-item:hover {
 
 .wrap {
   padding-bottom: 50px;
+  position: relative;
+  width: 100%;
+  padding-left: 14rem;
 }
