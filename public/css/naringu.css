@@ -167,6 +167,11 @@ pre code {
   background-color: transparent;
 }
 
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
 /* Pygments via Jekyll */
 .highlight {
   margin-bottom: 1rem;
@@ -242,19 +247,6 @@ th {
 tbody tr:nth-child(odd) td,
 tbody tr:nth-child(odd) th {
   background-color: white;
-}
-
-/*
- * Wrapper
- *
- * The wrapper is used to position site content when the sidebar is toggled. We
- * use an outter wrap to position the sidebar without interferring with the
- * regular page content.
- */
-
-.wrap {
-  position: relative;
-  width: 100%;
 }
 
 /*
@@ -564,5 +556,13 @@ a.pagination-item:hover {
   font-size: 10px;
   position: absolute;
   width: 100%;
+  height: 50px;
   bottom:0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.wrap {
+  padding-bottom: 50px;
 }
