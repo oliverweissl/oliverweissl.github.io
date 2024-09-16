@@ -16,16 +16,13 @@ tagline:             'Researcher & PhD Candidate'
 description:         ''
 url:                 https://oliverweissl.github.io
 baseurl:             /
-paginate:            7
+paginate:            5
 
 # About/contact
 author:
   name:              Oliver Weissl
   url:               https://oliverweissl.github.io
   email:             oliver.weissl@outlook.com
-
-# Custom vars
-version:             2.0
 
 # Social Media
 github:				https://github.com/oliverweissl
