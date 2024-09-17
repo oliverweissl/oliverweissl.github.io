@@ -486,7 +486,7 @@ a.sidebar-nav-item:focus {
   margin-left: -1rem;
   margin-right: -1rem;
   font-family: "PT Sans", Helvetica, Arial, sans-serif;
-  color: white;
+  color: black;
   text-align: center;
 }
 
@@ -545,6 +545,9 @@ a.pagination-item:hover {
 
 .theme-6dd .post a {
   color: #024b30
+}
+.theme-6dd .post .post-title a {
+  color: black;
 }
 
 /*
