@@ -546,6 +546,9 @@ a.pagination-item:hover {
 .theme-6dd .post a {
   color: #024b30
 }
+.theme-6dd .post .post-title a {
+  color: black;
+}
 
 /*
  * Footer
