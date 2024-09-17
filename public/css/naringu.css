@@ -540,7 +540,11 @@ a.pagination-item:hover {
 .theme-6dd .container a,
 .theme-6dd .sidebar-toggle,
 .theme-6dd .related-posts li a:hover {
-  color: #024b30;
+  color: black;
+}
+
+.theme-6dd .post a {
+  color: #024b30
 }
 
 /*
