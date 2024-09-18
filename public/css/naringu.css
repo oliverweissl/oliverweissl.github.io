@@ -44,10 +44,23 @@ html {
 
 body {
   color: black;
-  background-color: white;
+  background-color: black;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
+
+.scroller {
+  animation: scroll 100000s linear infinite;
+  background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url("/images/spectrogram.png");
+  background-size: cover;
+}
+
+@keyframes scroll {
+  100% {
+    background-position: 0px -100%;
+  }
+}
+
 
 /* No `:visited` state is required by default (browsers will use `a`) */
 a {
@@ -256,22 +269,29 @@ tbody tr:nth-child(odd) th {
  */
 
 .container {
-  max-width: 55rem;
-  padding-left:  1rem;
-  padding-right: 1rem;
+  max-width: 60rem;
+  padding-left:  3rem;
+  padding-right: 3rem;
   margin-left:  auto;
   margin-right: auto;
+  background-color: white;
+}
+.page {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 60em) {
+  .container {
+    max-width: 60rem;
+  }
 }
 @media (min-width: 55em) {
   .container {
-    max-width: 55rem;
+    max-width: 60rem;
   }
 }
-@media (min-width: 50em) {
-  .container {
-    max-width: 55rem;
-  }
-}
+
 
 /*
  * Masthead
@@ -284,6 +304,8 @@ tbody tr:nth-child(odd) th {
   padding-bottom: 1rem;
   margin-bottom: 3rem;
   border: 1px solid black;
+  border-style: solid none;
+  background-color: white;
 }
 .masthead-title {
   margin-top: 0;
@@ -558,7 +580,8 @@ a.pagination-item:hover {
 
 .footer {
   padding-top: 10px;
-  padding-bottom: 10px; 
+  padding-bottom: 10px;
+  padding-left: 14rem;
   border-top: 1px solid black;
   font-size: 10px;
   position: absolute;
@@ -568,6 +591,7 @@ a.pagination-item:hover {
   display: flex;
   justify-content: center;
   align-content: center;
+  background-color: white;
 }
 
 .wrap {
