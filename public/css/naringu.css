@@ -50,7 +50,7 @@ body {
 }
 
 .scroller {
-  animation: scroll 100000s linear infinite;
+  animation: scroll 25000s linear infinite;
   background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url("/images/spectrogram.png");
   background-size: cover;
 }
@@ -277,8 +277,8 @@ tbody tr:nth-child(odd) th {
   background-color: white;
 }
 .page {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 @media (min-width: 60em) {
@@ -439,10 +439,17 @@ a.sidebar-nav-item:focus {
  * Each post is wrapped in `.post` and is used on default and post layouts. Each
  * page is wrapped in `.page` and is only used on the page layout.
  */
+.posts {
+  padding-top: 2rem;
+}
 
 .page,
 .post {
   margin-bottom: 1em;
+}
+
+.post {
+  border-bottom: 1px solid black;
 }
 
 /* Blog post or page title */
@@ -510,6 +517,7 @@ a.sidebar-nav-item:focus {
   font-family: "PT Sans", Helvetica, Arial, sans-serif;
   color: black;
   text-align: center;
+  padding-bottom: 2rem;
 }
 
 /* Pagination items can be `span`s or `a`s */
