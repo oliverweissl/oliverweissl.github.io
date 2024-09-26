@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Interactive embodied evolution for socially adept Artificial General Creatures
+authors: Kevin Godin-Dubois, Oliver Weissl, Karine Miras, Anna V. Kononova
+link: https://arxiv.org/abs/2407.21357
 categories:
 - conference
 - workshop
