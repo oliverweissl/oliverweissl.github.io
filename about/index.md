@@ -12,13 +12,13 @@ My primary research interest lies in enhancing the interpretability of artificia
 
 My work experiences are:
 
-- Researcher @ [fortiss GmbH](https://www.fortiss.org/)
-- Research Assistant @ [CI Group - VU Amsterdam](https://cs.vu.nl/ci/)
+- Researcher @ [fortiss GmbH](https://www.fortiss.org/) <span style="color:grey; font-size: 0.75rem;">[09.2024 - now)</span>
+- Research Assistant @ [CI Group - VU Amsterdam](https://cs.vu.nl/ci/) <span style="color:grey; font-size: 0.75rem;">[09.2023 - 04.2024]</span>
   
   - My responibilites were development of [Revolve2](https://github.com/ci-group/revolve2), a simulator geared towards evolutionary computing in the domain of robotics.
   - Assisting in scientific projects.
 
-- Teaching Assistant @ [VU Amsterdam](https://vu.nl/en)
+- Teaching Assistant @ [VU Amsterdam](https://vu.nl/en) <span style="color:grey; font-size: 0.75rem;">[04.2022 - 07.2024]</span>
 
   - Courses I have been teaching:
   
@@ -33,5 +33,5 @@ My work experiences are:
 
 ## Get in contact
 
-If you have any questions or comments don't hesitate to  [send me an email](mailto:weissl@fortiss.org). 
+If you have any questions or comments don't hesitate to [send me an email](mailto:weissl@fortiss.org). 
 
