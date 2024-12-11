@@ -8,7 +8,7 @@ layout: page
 
 Hello, I’m Oliver Weißl, a researcher at fortiss and an incoming PhD candidate at the Technical University of Munich (TUM). My academic journey began with a Bachelor’s degree in Artificial Intelligence from VU Amsterdam, followed by a Master’s in Information Studies at the University of Amsterdam (UvA).
 
-My primary research interest lies in enhancing the interpretability of artificial intelligence systems. Currently, the outputs of deep learning models can often seem like guesswork, and I am passionate about addressing this challenge. By improving our understanding of these models, I aim to make AI more transparent and accessible, ultimately bridging the gap between complex algorithms and practical, actionable insights.
+My research focuses on uncertainty quantification and the testing of machine learning (ML) models. Testing plays a critical role across all domains to ensure that systems function as intended. However, the complexity of machine learning and deep learning models makes effective testing both more challenging and more essential. Currently, I am exploring how latent representations in generative models can be used to test deep neural networks (DNNs) more effectively.
 
 My work experiences are:
 
