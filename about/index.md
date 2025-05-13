@@ -6,9 +6,9 @@ layout: page
 
 <img alt="" src="/images/portrait.jpeg" width="200" height="200" />
 
-Hello, I’m Oliver Weißl, a researcher at fortiss and an incoming PhD candidate at the Technical University of Munich (TUM). My academic journey began with a Bachelor’s degree in Artificial Intelligence from VU Amsterdam, followed by a Master’s in Information Studies at the University of Amsterdam (UvA).
+Hello, I’m Oliver Weißl, a researcher at fortiss and a PhD candidate at the Technical University of Munich (TUM). My academic journey began with a Bachelor’s degree in Artificial Intelligence from VU Amsterdam, followed by a Master’s in Information Studies at the University of Amsterdam (UvA).
 
-My research focuses on uncertainty quantification and the testing of machine learning (ML) models. Testing plays a critical role across all domains to ensure that systems function as intended. However, the complexity of machine learning and deep learning models makes effective testing both more challenging and more essential. Currently, I am exploring how latent representations in generative models can be used to test deep neural networks (DNNs) more effectively.
+My research focuses on testing of Deep Learning (DL) Systems, through latent space magic. Testing plays a critical role across various domains to ensure that a systems function as intended. However, the complexity of DL models makes effective testing both more challenging and more essential. Currently, I am exploring how latent representations in generative models can be used to test deep neural networks (DNNs) more effectively.
 
 My work experiences are:
 
