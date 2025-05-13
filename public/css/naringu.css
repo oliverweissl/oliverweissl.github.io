@@ -468,6 +468,11 @@ a.sidebar-nav-item:focus {
   float: left;
 }
 
+.post-list .post-title {
+  width: 115px;
+  margin-right: 0px;
+}
+
 .post-authors {
   margin-top: 0;
   margin-bottom: 0;
@@ -533,8 +538,6 @@ a.sidebar-nav-item:focus {
 .related-posts li a:hover small {
   color: inherit;
 }
-
-
 /*
  * Pagination
  *
