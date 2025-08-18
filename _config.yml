@@ -6,7 +6,6 @@ highlighter:         rouge
 plugins: [jekyll-paginate, jekyll-sitemap]
 
 # Permalinks
-#
 # Use of `relative_permalinks` ensures post links from the index work properly.
 permalink:           pretty
 
@@ -28,8 +27,6 @@ author:
 github:				https://github.com/oliverweissl
 linkedin:			https://www.linkedin.com/in/oliver-weissl/
 
-# Theme Author (Please don't edit this line cause of MIT LICENSE rules)
+# Theme Author
 theme:
-  creator:			Rizky Ariestiyansyah
-  codename:			Naringu
   link:             https://github.com/ariestiyansyah/naringu
