@@ -199,28 +199,6 @@ pre code {
   background-color: white;
 }
 
-/* Gist via GitHub Pages */
-.gist .gist-file {
-  font-family: Menlo, Monaco, "Courier New", monospace !important;
-}
-.gist .markdown-body {
-  padding: 15px;
-}
-.gist pre {
-  padding: 0;
-  background-color: transparent;
-}
-.gist .gist-file .gist-data {
-  font-size: .8rem !important;
-  line-height: 1.4;
-}
-.gist code {
-  padding: 0;
-  color: inherit;
-  background-color: transparent;
-  border-radius: 0;
-}
-
 /* Quotes */
 blockquote {
   padding: .5rem 1rem;
@@ -280,23 +258,11 @@ tbody tr:nth-child(odd) th {
   background-color: white;
 }
 
-@media (min-width: 60em) {
-  .container {
-    max-width: 60rem;
-  }
-}
 @media (min-width: 55em) {
   .container {
     max-width: 60rem;
   }
 }
-
-
-/*
- * Masthead
- *
- * Super small header above the content for site name and short description.
- */
 
 .masthead {
   padding-top:    1rem;
@@ -407,32 +373,6 @@ a.sidebar-nav-item:focus {
 
 
 /*
- * Custom type
- *
- * Extend paragraphs with `.lead` for larger introductory text.
- */
-
-.lead {
-  font-size: 1.25rem;
-  font-weight: 300;
-}
-
-
-/*
- * Messages
- *
- * Show alert messages to users. You may add it to single elements like a `<p>`,
- * or to a parent if there are multiple elements to show.
- */
-
-.message {
-  margin-bottom: 1rem;
-  padding: 1rem;
-  color: black;
-  background-color: white;
-}
-
-/*
  * Posts and pages
  *
  * Each post is wrapped in `.post` and is used on default and post layouts. Each
@@ -492,6 +432,31 @@ a.sidebar-nav-item:focus {
 
 .post {
   border-bottom: 1px solid black;
+}
+
+/* Utility classes for common patterns */
+.scrollable-content {
+  max-height: calc(100vh - 250px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-right: -2.5rem;
+  padding-right: 2.5rem;
+}
+
+.meta-text {
+  color: grey;
+  font-size: 0.75rem;
+}
+
+.portrait-float {
+  float: left;
+  margin-right: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.full-width-title {
+  width: 100%;
+  margin-bottom: 0;
 }
 
 /* Blog post or page title */
@@ -635,13 +600,10 @@ a.pagination-item:hover {
 
 /* #6DD */
 
-.theme-6dd .sidebar,
-.theme-6dd .sidebar-toggle:active,
-.theme-6dd #sidebar-checkbox:checked ~ .sidebar-toggle {
+.theme-6dd .sidebar {
   background-color: white;
 }
 .theme-6dd .container a,
-.theme-6dd .sidebar-toggle,
 .theme-6dd .related-posts li a:hover {
   color: black;
 }

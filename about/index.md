@@ -4,7 +4,7 @@ author: oliverweissl
 layout: page
 ---
 
-<img alt="" src="/images/portrait.jpeg" width="175" height="175" style="float: left; margin-right: 1.5rem; margin-bottom: 1rem;" />
+<img alt="" src="/images/portrait.jpeg" width="175" height="175" class="portrait-float" />
 
 Hello, I'm Oliver Weißl, a researcher at fortiss GmbH and a PhD candidate at the Technical University of Munich (TUM). My academic journey began with a Bachelor's degree in Artificial Intelligence from Vrije Universiteit (VU) Amsterdam, followed by a Master's in Information Studies at the University of Amsterdam (UvA).
 
@@ -15,13 +15,13 @@ Other research interests include classical and population-based optimization, ev
 
 My work experiences are:
 
-- Researcher @ [fortiss GmbH](https://www.fortiss.org/) <span style="color:grey; font-size: 0.75rem;">[09.2024 - now)</span>
-- Research Assistant @ [CI Group - VU Amsterdam](https://cs.vu.nl/ci/) <span style="color:grey; font-size: 0.75rem;">[09.2023 - 04.2024]</span>
+- Researcher @ [fortiss GmbH](https://www.fortiss.org/) <span class="meta-text">[09.2024 - now)</span>
+- Research Assistant @ [CI Group - VU Amsterdam](https://cs.vu.nl/ci/) <span class="meta-text">[09.2023 - 04.2024]</span>
   
   - My responibilites were development of [Revolve2](https://github.com/ci-group/revolve2), a simulator geared towards evolutionary computing in the domain of robotics.
   - Assisting in scientific projects.
 
-- Teaching Assistant @ [VU Amsterdam](https://vu.nl/en) <span style="color:grey; font-size: 0.75rem;">[04.2022 - 07.2024]</span>
+- Teaching Assistant @ [VU Amsterdam](https://vu.nl/en) <span class="meta-text">[04.2022 - 07.2024]</span>
 
   - Courses I have been teaching and assisting in:
   

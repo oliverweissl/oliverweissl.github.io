@@ -23,10 +23,7 @@ author:
   url:               https://oliverweissl.github.io
   email:             oliver.weissl@outlook.com
 
-# Social Media
-github:				https://github.com/oliverweissl
-linkedin:			https://www.linkedin.com/in/oliver-weissl/
-
 # Theme Author
 theme:
   link:             https://github.com/ariestiyansyah/naringu
+  codename:         Naringu
