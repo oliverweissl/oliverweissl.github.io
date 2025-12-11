@@ -34,6 +34,8 @@ body {
   margin: 0;
   padding: 0;
   border: 1px solid black;
+  overflow: hidden;
+  height: 100vh;
 }
 
 html {
@@ -445,6 +447,42 @@ a.sidebar-nav-item:focus {
 
 .posts {
   padding-top: 2rem;
+}
+
+/* Custom scrollbar styling for posts */
+.posts::-webkit-scrollbar {
+  width: 1px;
+}
+
+.posts::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.posts::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 0;
+}
+
+.posts::-webkit-scrollbar-thumb:hover {
+  background: black;
+}
+
+/* Custom scrollbar styling for page content */
+.page::-webkit-scrollbar {
+  width: 1px;
+}
+
+.page::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.page::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 0;
+}
+
+.page::-webkit-scrollbar-thumb:hover {
+  background: black;
 }
 
 .page,

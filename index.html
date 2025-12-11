@@ -3,8 +3,8 @@ layout: default
 title: Home
 ---
 
-<div class="posts">
-  {% for post in paginator.posts %}
+<div class="posts" style="max-height: calc(100vh - 250px); overflow-y: auto; overflow-x: hidden; margin-right: -2.5rem; padding-right: 2.5rem;">
+  {% for post in site.posts %}
   <div class="post">
     <h1 class="post-title" style="width:100%; margin-bottom:0;">
       <a href="{{ post.url }}">
@@ -15,22 +15,5 @@ title: Home
     <p>{{ post.excerpt | strip_html | truncate: 500 }}</p>
   </div>
   {% endfor %}
-</div>
-
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
 </div>
 
