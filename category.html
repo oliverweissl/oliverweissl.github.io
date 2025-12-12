@@ -5,21 +5,30 @@ permalink: /categories/
 tags: [Categories]
 description: "An archive of posts sorted by categories."
 ---
-<ul class="tag-box inline">
-{% assign tags_list = site.categories %}
-{% if tags_list.first[0] == null %}
-{% for tag in tags_list %}
-<li><a href="#{{ tag }}">{{ tag | capitalize }}
-<span class="post-title">{{ site.tags[tag].size }} </span></a></li>
+{% assign total_posts = 0 %}
+{% for tag in site.categories %}
+  {% assign total_posts = total_posts | plus: tag[1].size %}
 {% endfor %}
-{% else %}
-{% for tag in tags_list %}
-<li><a href="#{{ tag[0] }}">{{ tag[0] | capitalize }}
-<span class="post-title" style="margin-right: 0.5rem;">{{ tag[1].size }}</span></a></li>
-{% endfor %}
-{% endif %}
-{% assign tags_list = nil %}
-</ul>
+
+
+<div class="category-chart-wrapper">
+  <div class="category-chart">
+    {% for tag in site.categories %}
+      {% assign category_name = tag[0] | capitalize %}
+      {% assign category_count = tag[1].size %}
+      {% assign percentage = category_count | times: 100.0 | divided_by: total_posts %}
+
+      <div class="category-bar">
+        <a href="#{{ tag[0] }}" style="text-decoration: none; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-end;">
+          <div class="category-bar-container">
+            <div class="category-bar-fill" style="height: {{ percentage }}%;"></div>
+          </div>
+          <div class="category-label"> <p style="color: #505050; margin-bottom: 0rem; ">{{ category_count }}/{{ total_posts }}</p>{{ category_name }}</div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
 {% for tag in site.categories %}
 <h2 id="{{ tag[0] }}">{{ tag[0] | capitalize }}</h2>
 <ul class="post-list">

@@ -3,6 +3,13 @@ layout: default
 ---
 
 <div class="post">
+  {% if page.categories %}
+   <div class="post-categories">
+    {% for category in page.categories %}
+      <span class="category-tag">{{ category }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
   <h2 class="post-title" style="margin-bottom: 0;">{{ page.title }}</h2>
   <div class="post-title-container">
     <div class="title-left"><h3 class="post-authors" title="Authors">{{ page.authors }}</h3></div>
