@@ -14,8 +14,12 @@ title:               Oliver Weissl
 tagline:             'Researcher & PhD Candidate'
 description:         ''
 url:                 https://oliverweissl.github.io
-baseurl:             /
+baseurl:             ''
 paginate:            5
+
+# Ensure public directory is included in build
+include:
+  - public
 
 # About/contact
 author:
