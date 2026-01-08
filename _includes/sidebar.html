@@ -1,0 +1,48 @@
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="/">Home</a>
+
+    {% comment %}
+      The code below dynamically generates a sidebar nav of pages with
+      `layout: page` in the front-matter. See readme for usage.
+    {% endcomment %}
+
+    {% assign pages_list = site.pages | sort:"url" %}
+    {% for node in pages_list %}
+      {% if node.title != null %}
+        {% if node.layout == "page" %}
+          <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </nav>
+
+  <ul style="list-style-type: none; padding-top:1rem; line-height: 1.75rem;">
+    <li>
+      <a href="mailto:weissl@fortiss.org"><i class="fa-regular fa-envelope" aria-hidden="true"></i> &nbsp; Email</a>
+    </li>
+
+    <li>
+      <a href="https://scholar.google.com/citations?user=moL6gxwAAAAJ&hl=en" target="_blank"><i class="fa-brands fa-google-scholar" aria-hidden="true"></i> &nbsp; Google Scholar</a>
+    </li>
+
+    <li>
+      <a href="https://orcid.org/0009-0008-7575-0187" target="_blank"><i class="fa-brands fa-orcid" aria-hidden="true"></i> &nbsp; ORCID</a>
+    </li>
+
+    <li>
+      <a href="https://www.researchgate.net/profile/Oliver-Weissl" target="_blank"><i class="fa-brands fa-researchgate" aria-hidden="true"></i> &nbsp; ResearchGate</a>
+    </li>
+
+    <li>
+      <a href="https://github.com/oliverweissl" target="_blank"><i class="fa-brands fa-github" aria-hidden="true"></i> &nbsp; Github</a>
+    </li>
+  </ul>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; {{ site.time | date: '%Y' }}. All rights reserved.
+    </p>
+  </div>
+</div>

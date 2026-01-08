@@ -1,0 +1,29 @@
+# Dependencies
+markdown:            kramdown
+highlighter:         rouge
+
+# Plugins
+plugins: [jekyll-paginate, jekyll-sitemap]
+
+# Permalinks
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+
+# Setup
+title:               Oliver Weissl
+tagline:             'Researcher & PhD Candidate'
+description:         ''
+url:                 https://oliverweissl.github.io
+baseurl:             /
+paginate:            5
+
+# About/contact
+author:
+  name:              Oliver Weissl
+  url:               https://oliverweissl.github.io
+  email:             oliver.weissl@outlook.com
+
+# Theme Author
+theme:
+  link:             https://github.com/ariestiyansyah/naringu
+  codename:         Naringu

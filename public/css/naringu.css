@@ -1,0 +1,645 @@
+/*
+ * Naringu is jekyll dark theme designed, built, and released under MIT license by @ariestiyansyah. It's based on poole, learn more at
+ * https://github.com/ariestiyansyah/naringu.
+ */
+
+
+/*
+ * Contents
+ *
+ * Global resets
+ * Code and Highlight
+ * Wrapper
+ * Container
+ * Masthead
+ * Sidebar
+ * Sidebar effect
+ * Custom yype
+ * Messages
+ * Post and Pages
+ * Related post
+ * Pagination
+ * Reverse Layout
+ * Footer
+*/
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  border: 1px solid black;
+  overflow: hidden;
+  height: 100vh;
+}
+
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body {
+  color: black;
+  background-color: black;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+
+.scroller {
+  animation: scroll 25000s linear infinite;
+  background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url("/images/spectrogram.png");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+@keyframes scroll {
+  100% {
+    background-position: 0px -100%;
+  }
+}
+
+
+/* No `:visited` state is required by default (browsers will use `a`) */
+a {
+  color: #024b30;
+  text-decoration: none;
+}
+a strong {
+  color: inherit;
+}
+
+/* `:focus` is linked to `:hover` for basic accessibility */
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #202020;
+  letter-spacing: -.025rem;
+} 
+
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+h3 {
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+}
+h4, h5, h6 {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+/* Body text */
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+strong {
+  color: black;
+}
+
+
+/* Lists */
+ul, ol, dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-bottom: .5rem;
+}
+
+/* Misc */
+hr {
+  position: relative;
+  margin: 1.5rem 0;
+  border: 0;
+  border: 1px solid black;
+}
+
+abbr {
+  font-size: 85%;
+  font-weight: bold;
+  color: black;
+  text-transform: uppercase;
+}
+abbr[title] {
+  cursor: help;
+  border-bottom: 1px dotted black;
+}
+
+/* 
+ * Code and Highlight
+ * 
+ * Code and higlight theme */
+
+code,
+pre {
+  font-family: Menlo, Monaco, "Courier New", monospace;
+}
+code {
+  padding: .25em .5em;
+  font-size: 85%;
+  color: white;
+  background-color: #202020;;
+  border-radius: 3px;
+}
+pre {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-size: .8rem;
+  line-height: 1.4;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: white;
+  border: 1px solid black;
+}
+pre code {
+  padding: 0;
+  font-size: 100%;
+  color: inherit;
+  background-color: transparent;
+}
+
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Pygments via Jekyll */
+.highlight {
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  background-color: #202020;
+}
+.highlight pre {
+  margin-bottom: 0;
+  background-color: white;
+}
+
+/* Quotes */
+blockquote {
+  padding: .5rem 1rem;
+  margin: .8rem 0;
+  color: #202020;
+  border-left: .25rem solid black;
+}
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+@media (min-width: 30em) {
+  blockquote {
+    padding-right: 5rem;
+    padding-left: 1.25rem;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  margin: 0 0 1rem;
+  border-radius: 5px;
+}
+
+/* 
+ * Tables 
+ *
+ * Hacker style tables */
+table {
+  margin-bottom: 1rem;
+  width: 100%;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+td,
+th {
+  padding: .25rem .5rem;
+  border: 1px solid black;
+}
+tbody tr:nth-child(odd) td,
+tbody tr:nth-child(odd) th {
+  background-color: white;
+}
+
+/*
+ * Container
+ *
+ * Center the page content and setting the max-width (default 55em).
+ */
+
+.container {
+  max-width: 60rem;
+  padding-left:  3rem;
+  padding-right: 3rem;
+  margin-left:  auto;
+  margin-right: auto;
+  background-color: white;
+}
+
+@media (min-width: 55em) {
+  .container {
+    max-width: 60rem;
+  }
+}
+
+.masthead {
+  padding-top:    1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
+  border: 1px solid black;
+  border-style: solid none;
+  background-color: white;
+}
+.masthead-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #505050;
+}
+.masthead-title a {
+  color: #505050;
+}
+.masthead-title small {
+  font-size: 75%;
+  font-weight: 400;
+  color: black;
+  letter-spacing: 0;
+}
+
+@media (max-width: 48em) {
+  .masthead-title {
+    text-align: center;
+  }
+  .masthead-title small {
+    display: none;
+  }
+}
+
+/*
+ * Sidebar
+ *
+ * The sidebar is the drawer, the item we are toggling with our handy hamburger
+ * button in the corner of the page.
+ *
+ * This particular sidebar implementation was inspired by Chris Coyier's
+ * "Offcanvas Menu with CSS Target" article, and the checkbox variation from the
+ * comments by a reader. It modifies both implementations to continue using the
+ * checkbox (no change in URL means no polluted browser history), but this uses
+ * `position` for the menu to avoid some potential content reflow issues.
+ *
+ * Source: http://css-tricks.com/off-canvas-menu-with-css-target/#comment-207504
+ */
+
+/* Style and "hide" the sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 14rem;
+  visibility: visible;
+  z-index: 10;
+  overflow-y: auto;
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-size: .875rem; /* 15px */
+  color: #505050;
+  border: 1px solid black;
+  background-color: white;
+}
+@media (min-width: 30em) {
+  .sidebar {
+    font-size: .75rem; /* 14px */
+  }
+}
+
+/* Sidebar content */
+.sidebar a {
+  font-weight: normal;
+  color: black;
+}
+.sidebar-item {
+  padding: 1rem;
+}
+.sidebar-item p:last-child {
+  margin-bottom: 0;
+}
+
+/* Sidebar nav */
+.sidebar-nav {
+  border-bottom: 1px solid #505050;
+}
+.sidebar-nav-item {
+  display: block;
+  padding: .5rem 1rem;
+  border-top: 1px solid #505050;
+}
+.sidebar-nav-item.active,
+a.sidebar-nav-item:hover,
+a.sidebar-nav-item:focus {
+  text-decoration: none;
+  background-color: white;
+  border-color: black;
+}
+
+@media (min-width: 48em) {
+  .sidebar-item {
+    padding: 1.5rem;
+  }
+  .sidebar-nav-item {
+    padding-left:  1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+
+/*
+ * Posts and pages
+ *
+ * Each post is wrapped in `.post` and is used on default and post layouts. Each
+ * page is wrapped in `.page` and is only used on the page layout.
+ */
+.post-title-container {
+  width: 100%;
+  justify-content: space-between;
+  overflow:hidden;
+  margin-bottom: 1rem;
+}
+
+.posts {
+  padding-top: 2rem;
+}
+
+/* Custom scrollbar styling for posts */
+.posts::-webkit-scrollbar {
+  width: 1px;
+}
+
+.posts::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.posts::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 0;
+}
+
+.posts::-webkit-scrollbar-thumb:hover {
+  background: black;
+}
+
+/* Custom scrollbar styling for page content */
+.page::-webkit-scrollbar {
+  width: 1px;
+}
+
+.page::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.page::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 0;
+}
+
+.page::-webkit-scrollbar-thumb:hover {
+  background: black;
+}
+
+.page,
+.post {
+  margin-bottom: 1em;
+}
+
+.post {
+  border-bottom: 1px solid black;
+}
+
+/* Utility classes for common patterns */
+.scrollable-content {
+  max-height: calc(100vh - 250px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-right: -2.5rem;
+  padding-right: 2.5rem;
+}
+
+.meta-text {
+  color: grey;
+  font-size: 0.75rem;
+}
+
+.portrait-float {
+  float: left;
+  margin-right: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.full-width-title {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+/* Blog post or page title */
+.page-title,
+.post-title,
+.post-title a {
+  color: black;
+}
+.page-title,
+.post-title {
+  margin-top: 0;
+  float: left;
+}
+
+.post-list .post-title {
+  width: 115px;
+  margin-right: 0px;
+}
+
+.post-authors {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.125rem;
+  color: #505050;
+  font-style: italic;
+}
+
+.paper-button {
+  background-color: white;
+  border: 1px solid black;
+  width: 100%;
+  height: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.paper-button:hover {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6) ), url("/images/spectrogram_h.png");
+  color: white;
+}
+
+/* Meta data line below post title */
+.post-date {
+  display: block;
+  color: #202020;
+}
+
+.title-left {
+  float: left;
+}
+
+.title-right {
+  float: right;
+}
+
+.container.content {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* 
+ * Related posts 
+ * 
+ * Related post in the bottom of post
+*/
+.related-posts {
+  padding-left: 0;
+  list-style: none;
+}
+.related-posts h3 {
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+}
+.related-posts li small {
+  font-size: 75%;
+  color: white;
+}
+.related-posts li a:hover {
+  color: black;
+  text-decoration: none;
+}
+.related-posts li a:hover small {
+  color: inherit;
+}
+/*
+ * Pagination
+ *
+ * Super lightweight (HTML-wise) blog pagination. `span`s are provide for when
+ * there are no more previous or next posts to show.
+ */
+
+.pagination {
+  overflow: hidden; /* clearfix */
+  margin-left: -1rem;
+  margin-right: -1rem;
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  color: black;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+/* Pagination items can be `span`s or `a`s */
+.pagination-item {
+  display: block;
+  padding: 1rem;
+  border: 1px solid black;
+}
+.pagination-item:first-child {
+  margin-bottom: -1px;
+}
+
+/* Only provide a hover state for linked pagination items */
+a.pagination-item:hover {
+  background-color: black;
+}
+
+@media (min-width: 30em) {
+  .pagination {
+    margin: 3rem 0;
+  }
+  .pagination-item {
+    float: left;
+    width: 50%;
+  }
+  .pagination-item:first-child {
+    margin-bottom: 0;
+    border-top-left-radius:    4px;
+    border-bottom-left-radius: 4px;
+  }
+  .pagination-item:last-child {
+    margin-left: -1px;
+    border-top-right-radius:    4px;
+    border-bottom-right-radius: 4px;
+  }
+}
+
+/*
+ * Themes
+ *
+ * Default dark theme of Naringu is here (Will Update)
+
+/* #6DD */
+
+.theme-6dd .sidebar {
+  background-color: white;
+}
+.theme-6dd .container a,
+.theme-6dd .related-posts li a:hover {
+  color: black;
+}
+
+.theme-6dd .post a {
+  color: #024b30
+}
+.theme-6dd .post .post-title a {
+  color: black;
+}
+
+/*
+ * Footer
+ * 
+ * Footer configuration class
+ */
+
+.footer {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 14rem;
+  border-top: 1px solid black;
+  font-size: 10px;
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  bottom:0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: white;
+}
+
+.wrap {
+  padding-bottom: 50px;
+  position: relative;
+  width: 100%;
+  padding-left: 14rem;
+}
