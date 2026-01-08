@@ -1,0 +1,47 @@
+<!-- Google tag (gtag.js) -->
+{% include analytics.html %}
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="QzRJ8jIfEf2zDPudFivmAXgeaWzZYlru78m4EJIWsH0" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:title" content="{{ page.title }}">
+<meta property="og:description" content="{{ page.description }}">
+<meta property="og:site_name" content="{{ site.title }}">
+{% if page.og_image %}
+<meta property="og:image" content="{{ page.og_image | absolute_url }}">
+{% endif %}
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="{{ page.url | absolute_url }}">
+<meta name="twitter:title" content="{{ page.title }}">
+<meta name="twitter:description" content="{{ page.description }}">
+{% if page.og_image %}
+<meta name="twitter:image" content="{{ page.og_image | absolute_url }}">
+{% endif %}
+
+<!-- Structured Data (JSON-LD) -->
+{% if page.authors %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "{{ page.title }}",
+  "description": "{{ page.description }}",
+  "author": [
+    {% for author in page.authors %}
+    {
+      "@type": "Person",
+      "name": "{{ author.name }}"{% if author.url %},
+      "url": "{{ author.url }}"{% endif %}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]{% if page.og_image %},
+  "image": "{{ page.og_image | absolute_url }}"{% endif %}
+}
+</script>
+{% endif %}

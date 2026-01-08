@@ -1,0 +1,157 @@
+---
+layout: project_showcase
+title: "Your Paper Title Here"
+description: "Brief description for meta tags and search engines (1-2 sentences)"
+keywords: "keyword1, keyword2, keyword3, keyword4"
+favicon: "/project_showcase/PROJECT_NAME/images/favicon.ico"
+
+# Authors and affiliations
+authors:
+  - name: "First Author"
+    url: "https://author-website.com"
+    affiliation: [1]
+  - name: "Second Author"
+    affiliation: [1, 2]
+  - name: "Third Author"
+    url: "https://author-website.com"
+    affiliation: [2]
+
+affiliations:
+  - "Institution 1"
+  - "Institution 2"
+
+# Publication links
+links:
+  - type: "paper"
+    url: "https://doi.org/..."
+    icon: "ai ai-acm"  # or ai-ieee, ai-doi, etc.
+    label: "Paper"
+  - type: "arxiv"
+    url: "https://arxiv.org/abs/..."
+    icon: "ai ai-arxiv"
+    label: "arXiv"
+  - type: "code"
+    url: "https://github.com/..."
+    icon: "fab fa-github"
+    label: "Code"
+
+# BibTeX citation
+bibtex: |
+  @article{yourkey2025,
+    title={Your Paper Title},
+    author={Author 1 and Author 2 and Author 3},
+    journal={Conference/Journal Name},
+    year={2025}
+  }
+
+# SEO and social sharing (optional)
+og_image: "/project_showcase/PROJECT_NAME/images/teaser.png"
+---
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">{{ page.title }}</h1>
+
+          <!-- Authors (automatically generated from frontmatter) -->
+          <div class="is-size-5 publication-authors">
+            {% for author in page.authors %}
+            <span class="author-block">
+              {% if author.url %}
+              <a href="{{ author.url }}" target="_blank">{{ author.name }}</a>
+              {% else %}
+              {{ author.name }}
+              {% endif %}
+              <sup>{{ author.affiliation | join: ',' }}</sup>{% unless forloop.last %},{% endunless %}
+            </span>
+            {% endfor %}
+          </div>
+
+          <!-- Affiliations (automatically generated from frontmatter) -->
+          <div class="is-size-5 publication-authors">
+            {% for affiliation in page.affiliations %}
+            <span class="author-block">
+              <sup>{{ forloop.index }}</sup>{{ affiliation }}{% unless forloop.last %},{% endunless %}
+            </span>
+            {% endfor %}
+          </div>
+
+          <!-- Links (automatically generated from frontmatter) -->
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              {% for link in page.links %}
+              <span class="link-block">
+                <a href="{{ link.url }}" class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon"><i class="{{ link.icon }}"></i></span>
+                  <span>{{ link.label }}</span>
+                </a>
+              </span>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Teaser Image -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="{{ '/project_showcase/PROJECT_NAME/images/teaser.png' | relative_url }}" alt="Teaser image"/>
+      <h2 class="subtitle has-text-centered">
+        Caption for your teaser image explaining the main concept or result.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- Abstract -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Your abstract text here. Explain the problem, your approach, and key results.
+            This section should be comprehensive but concise.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Add your custom sections below -->
+<!-- Example: Method overview, Results, Comparisons, etc. -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Section Title</h2>
+          <p>
+            Your content here. You can add multiple sections as needed.
+          </p>
+
+          <!-- Example: Adding images in a grid -->
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+            <div>
+              <img src="{{ '/project_showcase/PROJECT_NAME/images/figure1.png' | relative_url }}" alt="Figure 1" style="width:100%; height:auto;">
+              <h3 class="subtitle has-text-centered fig-caption">Figure 1 Caption</h3>
+            </div>
+            <div>
+              <img src="{{ '/project_showcase/PROJECT_NAME/images/figure2.png' | relative_url }}" alt="Figure 2" style="width:100%; height:auto;">
+              <h3 class="subtitle has-text-centered fig-caption">Figure 2 Caption</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
