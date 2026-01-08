@@ -1,99 +1,109 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8T8NBL17J1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+---
+layout: project_showcase
+title: "Targeted Deep Learning System Boundary Testing"
+description: "Mimicry is a technique for targeted deep learning-system boundary testing."
+keywords: "Mimicry, DL-Testing, Boundary Testing, Deep Learning"
+favicon: "/project_showcase/mimicry/images/boundary_manifold_6-5-1.ico"
 
-    gtag('config', 'G-8T8NBL17J1');
-  </script>
-  <meta charset="utf-8">
-  <meta name="description"
-        content="Mimicry is a technique for targeted deep learning-system boundary testing.">
-  <meta name="keywords" content="Mimicry, DL-Testing">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="google-site-verification" content="QzRJ8jIfEf2zDPudFivmAXgeaWzZYlru78m4EJIWsH0" />
-  <title>Targeted Deep Learning System Boundary Testing</title>
+# Authors and affiliations
+authors:
+  - name: "Oliver Weißl"
+    url: "https://oliverweissl.github.io"
+    affiliation: [1, 2]
+  - name: "Amr Abdellatif"
+    url: "//:0"
+    affiliation: [1]
+  - name: "Xingcheng Chen"
+    url: "https://www.linkedin.com/in/xingcheng-chen-aab980263/"
+    affiliation: [1, 2]
+  - name: "Giorgi Merabishvili"
+    url: "https://giorgix121.github.io/"
+    affiliation: [3]
+  - name: "Vincenzo Riccio"
+    url: "https://p1ndsvin.github.io/"
+    affiliation: [4]
+  - name: "Severin Kacianka"
+    url: "https://kacianka.at/"
+    affiliation: [2]
+  - name: "Andrea Stocco"
+    url: "https://tsigalko18.github.io/"
+    affiliation: [1, 2]
 
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
-  <link rel="icon" href="static/images/boundary_manifold_6-5-1.ico">
+affiliations:
+  - "Technical University of Munich"
+  - "fortiss GmbH"
+  - "North Carolina State University"
+  - "University of Udine"
 
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-</head>
-<body>
+# Publication links
+links:
+  - type: "paper"
+    url: "https://dl.acm.org/doi/10.1145/3771557"
+    icon: "ai ai-acm"
+    label: "Paper"
+  - type: "arxiv"
+    url: "https://arxiv.org/abs/2408.06258"
+    icon: "ai ai-arxiv"
+    label: "arXiv Preprint"
+  - type: "code"
+    url: "https://github.com/ast-fortiss-tum/SMOO/tree/archive/mimicry"
+    icon: "fab fa-github"
+    label: "Code"
+
+# BibTeX citation
+bibtex: |
+  @article{weissl2024targeted,
+    title={Targeted Deep Learning System Boundary Testing},
+    author={Wei{\ss}l, Oliver and Abdellatif, Amr and Chen, Xingcheng and Merabishvili, Giorgi and Riccio, Vincenzo and Kacianka, Severin and Stocco, Andrea},
+    journal={arXiv preprint arXiv:2408.06258},
+    year={2024}
+  }
+
+# SEO and social
+og_image: "/project_showcase/mimicry/images/sg_example.png"
+---
 
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Targeted Deep Learning System Boundary Testing</h1>
+          <h1 class="title is-1 publication-title">{{ page.title }}</h1>
+
+          <!-- Authors -->
           <div class="is-size-5 publication-authors">
+            {% for author in page.authors %}
             <span class="author-block">
-              <a href="https://oliverweissl.github.io" target="_blank">Oliver Weißl</a><sup>1,2</sup>,</span>
-            <span class="author-block">
-              <a href="//:0">Amr Abdellatif</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://www.linkedin.com/in/xingcheng-chen-aab980263/" target="_blank">Xingcheng Chen</a><sup>1,2</sup>,
+              {% if author.url %}
+              <a href="{{ author.url }}" target="_blank">{{ author.name }}</a>
+              {% else %}
+              {{ author.name }}
+              {% endif %}
+              <sup>{{ author.affiliation | join: ',' }}</sup>{% unless forloop.last %},{% endunless %}
             </span>
-            <span class="author-block">
-              <a href="https://giorgix121.github.io/" target="_blank">Giorgi Merabishvili</a><sup>3</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://p1ndsvin.github.io/" target="_blank">Vincenzo Riccio</a><sup>4</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://kacianka.at/" target="_blank">Severin Kacianka</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://tsigalko18.github.io/" target="_blank">Andrea Stocco</a><sup>1,2</sup>
-            </span>
+            {% endfor %}
           </div>
 
+          <!-- Affiliations -->
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Technical University of Munich,</span>
-            <span class="author-block"><sup>2</sup>fortiss GmbH</span>
-              <span class="author-block"><sup>3</sup>North Carolina State University</span>
-              <span class="author-block"><sup>4</sup>University of Udine</span>
+            {% for affiliation in page.affiliations %}
+            <span class="author-block">
+              <sup>{{ forloop.index }}</sup>{{ affiliation }}{% unless forloop.last %},{% endunless %}
+            </span>
+            {% endfor %}
           </div>
 
+          <!-- Links -->
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- PDF Link. -->
+              {% for link in page.links %}
               <span class="link-block">
-                <a href="https://dl.acm.org/doi/10.1145/3771557"
-                   class="external-link button is-normal is-rounded is-dark" target="_blank">
-                  <span class="icon">
-                      <i class="ai ai-acm"></i>
-                  </span>
-                  <span>Paper</span>
+                <a href="{{ link.url }}" class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon"><i class="{{ link.icon }}"></i></span>
+                  <span>{{ link.label }}</span>
                 </a>
               </span>
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2408.06258"
-                   class="external-link button is-normal is-rounded is-dark" target="_blank">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv Preprint</span>
-                </a>
-              </span>
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/ast-fortiss-tum/SMOO/tree/archive/mimicry"
-                   class="external-link button is-normal is-rounded is-dark" target="_blank">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
-              </span>
+              {% endfor %}
             </div>
           </div>
         </div>
@@ -105,7 +115,7 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img height="auto" src="static/images/sg_example.png"/>
+      <img height="auto" src="{{ '/project_showcase/mimicry/images/sg_example.png' | relative_url }}" alt="Mimicry example"/>
       <h2 class="subtitle has-text-centered">
         <span class="dnerf">Mimicry</span> mixes features of a blue car with those of a white truck, producing different outputs depending on the latent layers used.
       </h2>
@@ -126,7 +136,7 @@
             for fine-grained, targeted exploration of DL system boundaries. Mimicry performs boundary testing by
             leveraging the probabilistic nature of DL outputs to identify promising directions for exploration. By using
             style-based GANs to disentangle inputs into content and style components, Mimicry generates boundary test
-            inputs by mimicking features from both source and target classes. We evaluated Mimicry’s effectiveness in
+            inputs by mimicking features from both source and target classes. We evaluated Mimicry's effectiveness in
             generating boundary inputs for five DL image classification systems, comparing it to two baselines from the
             literature. Our results show that Mimicry consistently identifies inputs up to 25× closer to the true decision
             boundary, outperforming the baselines with statistical significance. Moreover, it generates semantically
@@ -156,11 +166,11 @@ This targeted capability is particularly valuable when only a limited subset of 
           </p>
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
               <div>
-          <img src="static/images/UBT.png" alt="Untargeted boundary testing." style="width:100%; height:auto;">
+          <img src="{{ '/project_showcase/mimicry/images/UBT.png' | relative_url }}" alt="Untargeted boundary testing." style="width:100%; height:auto;">
               <h3 class="subtitle has-text-centered teaser fig-caption">Untargeted Boundary Testing</h3>
                   </div>
               <div>
-          <img src="static/images/TBT.png" alt="Targeted boundary testing." style="width:100%; height:auto;">
+          <img src="{{ '/project_showcase/mimicry/images/TBT.png' | relative_url }}" alt="Targeted boundary testing." style="width:100%; height:auto;">
               <h3 class="subtitle has-text-centered teaser fig-caption">Targeted Boundary Testing</h3>
                   </div>
         </div>
@@ -184,25 +194,25 @@ Sinvad, on the other hand, quickly loses realism, as its manipulation strategy t
           </p>
           <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;">
               <div>
-          <img src="static/images/SMOO_SVHN_example-1.png" alt="SVHN example for Mimicry." style="width:100%; height:auto;">
+          <img src="{{ '/project_showcase/mimicry/images/SMOO_SVHN_example-1.png' | relative_url }}" alt="SVHN example for Mimicry." style="width:100%; height:auto;">
               <h3 class="subtitle has-text-centered fig-caption"><span class="dnerf">Mimicry</span> - SVHN</h3>
                   </div>
               <div>
-          <img src="static/images/Sinvad_SVHN_example-1.png" alt="SVHN example for Sinvad." style="width:100%; height:auto;">
+          <img src="{{ '/project_showcase/mimicry/images/Sinvad_SVHN_example-1.png' | relative_url }}" alt="SVHN example for Sinvad." style="width:100%; height:auto;">
               <h3 class="subtitle has-text-centered fig-caption">Sinvad - SVHN</h3>
                   </div>
               <div>
-              <img src="static/images/DeepJanus_SVHN_example-1.png" alt="SVHN example for DeepJanus." style="width:100%; height:auto;">
+              <img src="{{ '/project_showcase/mimicry/images/DeepJanus_SVHN_example-1.png' | relative_url }}" alt="SVHN example for DeepJanus." style="width:100%; height:auto;">
               <h3 class="subtitle has-text-centered fig-caption">DeepJanus - SVHN</h3>
                   </div>
         </div>
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
               <div>
-          <img src="static/images/SMOO_Imagenet_example-1.png" alt="ImageNet example for Mimicry." style="width:100%; height:auto;">
+          <img src="{{ '/project_showcase/mimicry/images/SMOO_Imagenet_example-1.png' | relative_url }}" alt="ImageNet example for Mimicry." style="width:100%; height:auto;">
               <h3 class="subtitle has-text-centered fig-caption"><span class="dnerf">Mimicry</span> - ImageNet</h3>
                   </div>
               <div>
-          <img src="static/images/Sinvad_Imagenet_example-1.png" alt="ImageNet example for Sinvad." style="width:100%; height:auto;">
+          <img src="{{ '/project_showcase/mimicry/images/Sinvad_Imagenet_example-1.png' | relative_url }}" alt="ImageNet example for Sinvad." style="width:100%; height:auto;">
               <h3 class="subtitle has-text-centered fig-caption">Sinvad - ImageNet</h3>
                   </div>
         </div>
@@ -220,47 +230,10 @@ Sinvad, on the other hand, quickly loses realism, as its manipulation strategy t
           <p>We present <span class="dnerf">Mimicry</span>, a targeted boundary-testing method for deep learning classifiers that locates decision boundary inputs through latent feature mixing and SUT feedback.
               By leveraging disentangled latent space representations, <span class="dnerf">Mimicry</span> delivers high-control, high-fidelity test cases that remain in-distribution, outperforming DeepJanus and Sinvad across all benchmarks—especially in complex datasets.
               Its targeted exploration enables meaningful class-to-class boundary testing, improving functional coverage while avoiding unrealistic or overly blurred outputs.
-              For future work <span class="dnerf">Mimicry</span>’s realism and boundary precision make it particularly promising for safety-critical domains such as autonomous driving and medical imaging, where valid, semantically rich test cases are essential.
-</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{weissl2024targeted,
-  title={Targeted Deep Learning System Boundary Testing},
-  author={Wei{\ss}l, Oliver and Abdellatif, Amr and Chen, Xingcheng and Merabishvili, Giorgi and Riccio, Vincenzo and Kacianka, Severin and Stocco, Andrea},
-  journal={arXiv preprint arXiv:2408.06258},
-  year={2024}
-}</code></pre>
-  </div>
-</section>
-
-
-<footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This webpage is based on the following <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a>.
+              For future work <span class="dnerf">Mimicry</span>'s realism and boundary precision make it particularly promising for safety-critical domains such as autonomous driving and medical imaging, where valid, semantically rich test cases are essential.
           </p>
         </div>
       </div>
     </div>
   </div>
-</footer>
-
-</body>
-</html>
+</section>
