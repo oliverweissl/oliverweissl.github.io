@@ -21,6 +21,12 @@ paginate:            5
 include:
   - public
 
+# Collections
+collections:
+  project_showcase:
+    output: true
+    permalink: /:collection/:path/
+
 # About/contact
 author:
   name:              Oliver Weissl
