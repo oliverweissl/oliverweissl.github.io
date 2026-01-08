@@ -1,5 +1,6 @@
 ---
 layout: project_showcase
+permalink: /project_showcase/PROJECT_NAME/
 title: "Your Paper Title Here"
 description: "Brief description for meta tags and search engines (1-2 sentences)"
 keywords: "keyword1, keyword2, keyword3, keyword4"

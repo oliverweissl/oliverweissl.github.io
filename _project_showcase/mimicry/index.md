@@ -1,5 +1,6 @@
 ---
 layout: project_showcase
+permalink: /project_showcase/mimicry/
 title: "Targeted Deep Learning System Boundary Testing"
 description: "Mimicry is a technique for targeted deep learning-system boundary testing."
 keywords: "Mimicry, DL-Testing, Boundary Testing, Deep Learning"
@@ -52,12 +53,13 @@ links:
 
 # BibTeX citation
 bibtex: |
-  @article{weissl2024targeted,
-    title={Targeted Deep Learning System Boundary Testing},
-    author={Wei{\ss}l, Oliver and Abdellatif, Amr and Chen, Xingcheng and Merabishvili, Giorgi and Riccio, Vincenzo and Kacianka, Severin and Stocco, Andrea},
-    journal={arXiv preprint arXiv:2408.06258},
-    year={2024}
-  }
+  @article{weissl2025targeted,
+      title={Targeted deep learning system boundary testing},
+      author={Wei{\ss}l, Oliver and Abdellatif, Amr and Chen, Xingcheng and Merabishvili, Giorgi and Riccio, Vincenzo and Kacianka, Severin and Stocco, Andrea},
+      journal={ACM Transactions on Software Engineering and Methodology},
+      year={2025},
+      publisher={ACM New York, NY}
+    }
 
 # SEO and social
 og_image: "/project_showcase/mimicry/images/sg_example.png"

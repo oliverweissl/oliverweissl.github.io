@@ -1,5 +1,6 @@
 ---
 layout: project_showcase
+permalink: /project_showcase/hynea/
 title: "HyperNet-Adaptation for Diffusion-Based Test Case
 Generation"
 description: "HyNeA provides dataset-free
