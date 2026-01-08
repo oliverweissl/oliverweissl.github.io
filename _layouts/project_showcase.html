@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% include project_showcase_head.html %}
+
+  <meta name="description" content="{{ page.description }}">
+  <meta name="keywords" content="{{ page.keywords }}">
+  <title>{{ page.title }}</title>
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="{{ '/public/project_showcase/css/bulma.min.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/public/project_showcase/css/fontawesome.all.min.css' | relative_url }}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="{{ '/public/project_showcase/css/project_showcase.css' | relative_url }}">
+
+  {% if page.favicon %}
+  <link rel="icon" href="{{ page.favicon | relative_url }}">
+  {% endif %}
+
+  {% if page.custom_css %}
+  <link rel="stylesheet" href="{{ page.custom_css | relative_url }}">
+  {% endif %}
+</head>
+<body>
+
+{{ content }}
+
+{% if page.bibtex %}
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>{{ page.bibtex }}</code></pre>
+    {% if page.bibtex_note %}
+    <p class="has-text-grey">{{ page.bibtex_note }}</p>
+    {% endif %}
+  </div>
+</section>
+{% endif %}
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This webpage is based on the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies template</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
