@@ -36,7 +36,7 @@ links:
     icon: "ai ai-acm"  # or ai-ieee, ai-doi, etc.
     label: "Paper"
   - type: "arxiv"
-    url: "https://arxiv.org/abs/..."
+    url: "https://arxiv.org/abs/2601.15041"
     icon: "ai ai-arxiv"
     label: "arXiv"
   - type: "code"
