@@ -46,11 +46,11 @@ links:
 
 # BibTeX citation
 bibtex: |
-  @article{yourkey2025,
-    title={Your Paper Title},
-    author={Author 1 and Author 2 and Author 3},
-    journal={Conference/Journal Name},
-    year={2025}
+    @article{weissl2026hypernet,
+    title={HyperNet-Adaptation for Diffusion-Based Test Case Generation},
+    author={Wei{\ss}l, Oliver and Riccio, Vincenzo and Kacianka, Severin and Stocco, Andrea},
+    journal={arXiv preprint arXiv:2601.15041},
+    year={2026}
   }
 
 # SEO and social sharing (optional)
