@@ -15,7 +15,7 @@ Other research interests include classical and population-based optimization, ev
 
 My work experiences are:
 
-- Researcher @ [fortiss GmbH](https://www.fortiss.org/) <span class="meta-text">[09.2024 - now)</span>
+- Researcher @ [fortiss GmbH](https://www.fortiss.org/) <span class="meta-text">[09.2024 - 06.2026]</span>
 - Research Assistant @ [CI Group - VU Amsterdam](https://cs.vu.nl/ci/) <span class="meta-text">[09.2023 - 04.2024]</span>
   
   - My responibilites were development of [Revolve2](https://github.com/ci-group/revolve2), a simulator geared towards evolutionary computing in the domain of robotics.
