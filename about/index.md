@@ -15,6 +15,7 @@ Other research interests include classical and population-based optimization, ev
 
 My work experiences are:
 
+- Senior Data Scientist @ [NorCom](https://www.norcom.de/) <span class="meta-text">[08.2026 - now)</span>
 - Researcher @ [fortiss GmbH](https://www.fortiss.org/) <span class="meta-text">[09.2024 - 06.2026]</span>
 - Research Assistant @ [CI Group - VU Amsterdam](https://cs.vu.nl/ci/) <span class="meta-text">[09.2023 - 04.2024]</span>
   
