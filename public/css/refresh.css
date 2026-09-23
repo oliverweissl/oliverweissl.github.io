@@ -715,3 +715,91 @@ body,
     background: linear-gradient(to bottom right, transparent calc(50% - .75px), var(--ink) calc(50% - .75px), var(--ink) calc(50% + .75px), transparent calc(50% + .75px));
   }
 }
+
+/*
+ * Fractals & impossible geometry
+ */
+
+/* Julia-set background (public/js/fractal.js); spectrogram stays as no-JS fallback */
+#fractal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  image-rendering: pixelated;
+  pointer-events: none;
+}
+.has-fractal .scroller {
+  background: none;
+  animation: none;
+}
+
+/* Koch-curve dividers instead of straight rules */
+.hero {
+  border-bottom: none;
+  padding-bottom: 2.5rem;
+  background: url("/images/koch.svg") left bottom / 54px auto repeat-x;
+}
+.post-scroll .post {
+  border-bottom: none;
+  padding-bottom: 1.5rem;
+  background: url("/images/koch.svg") left bottom / 54px auto repeat-x;
+}
+
+/* Desktop: the frame is shaded like a carved 3D frame lit from the top-left;
+   the mitre triangles take the sidebar tone so each panel ends at its diagonal */
+@media (min-width: 48.01em) {
+  :root {
+    --frame-top: #f2f2f2;
+    --frame-side: #e3e3e3;
+    --frame-bottom: #d4d4d4;
+  }
+  .masthead {
+    background-color: var(--frame-top);
+  }
+  .theme-6dd .sidebar,
+  .sidebar {
+    background-color: var(--frame-side);
+  }
+  .footer {
+    background-color: var(--frame-bottom);
+  }
+  .masthead::before {
+    background:
+      linear-gradient(to top right, transparent calc(50% - .75px), var(--ink) calc(50% - .75px), var(--ink) calc(50% + .75px), transparent calc(50% + .75px)),
+      linear-gradient(to top right, var(--frame-side) 50%, transparent 50%);
+  }
+  .footer::before {
+    background:
+      linear-gradient(to bottom right, transparent calc(50% - .75px), var(--ink) calc(50% - .75px), var(--ink) calc(50% + .75px), transparent calc(50% + .75px)),
+      linear-gradient(to bottom right, var(--frame-side) 50%, transparent 50%);
+  }
+}
+
+/* 404: endless zoom into nested, rotating squares (Droste effect) */
+.droste-wrap {
+  clear: both;
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 2rem;
+}
+.droste {
+  width: min(320px, 80%);
+  height: auto;
+  color: var(--ink);
+}
+.droste-zoom {
+  animation: droste 1.6s linear infinite;
+}
+@keyframes droste {
+  from { transform: rotate(0deg) scale(1); }
+  to { transform: rotate(-8deg) scale(1.16279); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .droste-zoom {
+    animation: none;
+  }
+}

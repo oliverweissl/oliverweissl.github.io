@@ -5,6 +5,7 @@
 
 <body class="theme-6dd">
     <div class="scroller">
+    <canvas id="fractal-bg" aria-hidden="true"></canvas>
     {% include sidebar.html %}
 
     <div class="page-container">
@@ -25,5 +26,6 @@
         {% include footer.html %}
     </div>
     </div>
+    <script src="{{ '/public/js/fractal.js' | relative_url }}" defer></script>
  </body>
 </html>
