@@ -632,3 +632,58 @@ body,
 .tl-item:hover .tl-logo {
   filter: none;
 }
+
+/*
+ * Desktop frame layout: header and footer span the full width, the sidebar
+ * sits between them, and the content box gets an outer outline joined to it
+ * by diagonals at the corners.
+ */
+@media (min-width: 48.01em) {
+  :root {
+    --head-h: 62px;
+    --foot-h: 50px;
+    --sidebar-w: 14rem;
+    --bevel: 14px;
+  }
+  .masthead {
+    position: relative;
+    z-index: 11;
+    height: var(--head-h);
+    margin-left: calc(-1 * var(--sidebar-w));
+    padding-left: var(--sidebar-w);
+  }
+  .sidebar {
+    top: var(--head-h);
+    bottom: var(--foot-h);
+  }
+  .footer {
+    z-index: 11;
+  }
+  .sidebar-nav-item:first-child {
+    border-top: none;
+  }
+  .container.content {
+    position: relative;
+  }
+
+  .container.content::before,
+  .container.content::after {
+    content: "";
+    position: absolute;
+    inset: calc(-1 * var(--bevel));
+    pointer-events: none;
+  }
+  /* Outer outline */
+  .container.content::before {
+    border: 1px solid rgba(255, 255, 255, .7);
+  }
+  /* Corner diagonals from the box corner to the outline corner */
+  .container.content::after {
+    --line: rgba(255, 255, 255, .7);
+    background:
+      linear-gradient(to top right, transparent calc(50% - .75px), var(--line) calc(50% - .75px), var(--line) calc(50% + .75px), transparent calc(50% + .75px)) left top / var(--bevel) var(--bevel) no-repeat,
+      linear-gradient(to bottom right, transparent calc(50% - .75px), var(--line) calc(50% - .75px), var(--line) calc(50% + .75px), transparent calc(50% + .75px)) right top / var(--bevel) var(--bevel) no-repeat,
+      linear-gradient(to bottom right, transparent calc(50% - .75px), var(--line) calc(50% - .75px), var(--line) calc(50% + .75px), transparent calc(50% + .75px)) left bottom / var(--bevel) var(--bevel) no-repeat,
+      linear-gradient(to top right, transparent calc(50% - .75px), var(--line) calc(50% - .75px), var(--line) calc(50% + .75px), transparent calc(50% + .75px)) right bottom / var(--bevel) var(--bevel) no-repeat;
+  }
+}

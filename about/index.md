@@ -17,7 +17,7 @@ Other research interests include classical and population-based optimization, ev
   <span class="now-label">now</span>
   <ul>
     <li><strong>Senior Data Scientist</strong> @ <a href="https://www.norcom.de/">NorCom</a>, scaling RAG solutions from thousands to millions of files.</li>
-    <li><strong>PhD Candidate</strong> @ <a href="https://www.tum.de/">TUM</a>, generative testing of deep learning systems.</li>
+    <li><strong>PhD Candidate</strong> @ <a href="https://www.tum.de/">TUM</a>, test input generation for AI-enabled systems.</li>
   </ul>
   <div class="now-actions">
     <a class="action-button action-button-primary" href="/files/Oliver_Weissl_CV.pdf" target="_blank"><i class="fa-regular fa-file-lines" aria-hidden="true"></i> Download CV</a>
@@ -46,7 +46,7 @@ Other research interests include classical and population-based optimization, ev
     <div class="tl-body">
       <img class="tl-logo" src="/images/logos/tum.svg" alt="TUM logo">
       <span class="tl-date">09.2024 – now</span>
-      <h3 class="tl-title">PhD in Generative Testing of DL Systems</h3>
+      <h3 class="tl-title">PhD: Test Input Generation for AI-Enabled Systems</h3>
       <p class="tl-org"><a href="https://www.tum.de/">Technical University of Munich</a></p>
     </div>
   </li>
