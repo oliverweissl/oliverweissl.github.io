@@ -44,6 +44,7 @@ Other research interests include classical and population-based optimization, ev
   <li class="tl-item tl-edu tl-current">
     <span class="tl-dot"></span>
     <div class="tl-body">
+      <img class="tl-logo" src="/images/logos/tum.svg" alt="TUM logo">
       <span class="tl-date">09.2024 – now</span>
       <h3 class="tl-title">PhD in Generative Testing of DL Systems</h3>
       <p class="tl-org"><a href="https://www.tum.de/">Technical University of Munich</a></p>
@@ -63,6 +64,7 @@ Other research interests include classical and population-based optimization, ev
   <li class="tl-item tl-edu">
     <span class="tl-dot"></span>
     <div class="tl-body">
+      <img class="tl-logo" src="/images/logos/uva.svg" alt="University of Amsterdam logo">
       <span class="tl-date">09.2023 – 07.2024</span>
       <h3 class="tl-title">MSc Information Studies: Data Science</h3>
       <p class="tl-org"><a href="https://www.uva.nl/en">University of Amsterdam</a></p>
@@ -83,6 +85,7 @@ Other research interests include classical and population-based optimization, ev
   <li class="tl-item tl-edu">
     <span class="tl-dot"></span>
     <div class="tl-body">
+      <img class="tl-logo" src="/images/logos/uibk.svg" alt="University of Innsbruck logo">
       <span class="tl-date">10.2022 – 02.2023</span>
       <h3 class="tl-title">Erasmus Semester in Computer Science</h3>
       <p class="tl-org"><a href="https://www.uibk.ac.at/en/">University of Innsbruck</a></p>
@@ -112,6 +115,7 @@ Other research interests include classical and population-based optimization, ev
   <li class="tl-item tl-edu w-none e-to-dot">
     <span class="tl-dot"></span>
     <div class="tl-body">
+      <img class="tl-logo tl-logo-raster" src="/images/logos/vu.png" alt="VU Amsterdam logo">
       <span class="tl-date">09.2020 – 07.2023</span>
       <h3 class="tl-title">BSc Artificial Intelligence</h3>
       <p class="tl-org"><a href="https://vu.nl/en">Vrije Universiteit Amsterdam</a>, Honors Programme</p>

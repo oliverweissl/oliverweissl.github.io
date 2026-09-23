@@ -254,13 +254,15 @@
 .post-card-teaser-row {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   padding: 1rem;
   background: var(--paper);
 }
 .post-card-teaser-row img {
+  flex: 0 1 auto;
+  min-width: 0;
   width: auto;
-  max-width: 45%;
+  max-width: 100%;
   height: 170px;
   object-fit: contain;
 }
@@ -593,4 +595,23 @@
   .now-label::before {
     animation: none;
   }
+}
+
+/* University logos next to education entries: black, colour on hover */
+.tl-logo {
+  display: block;
+  height: 30px;
+  width: auto;
+  max-width: 230px;
+  margin: 0 0 .4rem;
+  border-radius: 0;
+  object-fit: contain;
+  filter: brightness(0);
+  transition: filter .25s ease;
+}
+.tl-logo-raster {
+  filter: grayscale(1) contrast(1.6);
+}
+.tl-item:hover .tl-logo {
+  filter: none;
 }
