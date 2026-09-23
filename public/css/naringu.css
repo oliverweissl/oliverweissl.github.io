@@ -643,3 +643,122 @@ a.pagination-item:hover {
   width: 100%;
   padding-left: 14rem;
 }
+
+/*
+ * Mobile layout
+ *
+ * On small screens the fixed sidebar becomes a top navigation bar and the
+ * page scrolls normally instead of using inner scroll containers.
+ */
+@media (max-width: 48em) {
+  html,
+  body {
+    overflow: visible;
+    height: auto;
+    border: none;
+  }
+
+  .scroller {
+    background-attachment: scroll;
+  }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+    font-size: .875rem;
+    overflow: visible;
+    border-style: none none solid none;
+  }
+  .sidebar-nav {
+    display: flex;
+    border-bottom: none;
+  }
+  .sidebar-nav-item {
+    flex: 1;
+    text-align: center;
+    border-top: none;
+    border-right: 1px solid #505050;
+  }
+  .sidebar-nav-item:last-child {
+    border-right: none;
+  }
+  .sidebar-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .25rem 1rem;
+    margin: 0;
+    padding: .5rem 1rem !important;
+    border-top: 1px solid #505050;
+  }
+  .sidebar-copyright {
+    display: none;
+  }
+
+  .wrap {
+    padding-left: 0;
+  }
+  .page-container {
+    min-height: 0;
+  }
+  .masthead {
+    margin-bottom: 1rem;
+  }
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .container.content {
+    padding-top: 1rem;
+  }
+
+  .scrollable-content {
+    max-height: none;
+    overflow: visible;
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+  .page-title,
+  .post-title {
+    float: none;
+    overflow-wrap: anywhere;
+  }
+  .title-left,
+  .title-right {
+    float: none;
+  }
+  .post-authors {
+    font-size: 1rem;
+  }
+
+  .portrait-float {
+    width: 120px;
+    height: 120px;
+    margin-right: 1rem;
+  }
+
+  blockquote {
+    padding-right: .5rem;
+  }
+  pre {
+    overflow-x: auto;
+  }
+  .content a {
+    overflow-wrap: anywhere;
+  }
+
+  .post-list {
+    padding-left: 1.25rem;
+  }
+
+  .footer {
+    position: static;
+    padding-left: 0;
+    height: auto;
+    text-align: center;
+  }
+}

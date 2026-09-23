@@ -130,3 +130,6 @@ body {
 .results-carousel video {
   margin: 0;
 }
+pre {
+  overflow-x: auto;
+}

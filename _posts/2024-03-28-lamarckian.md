@@ -2,13 +2,14 @@
 layout: post
 title: Lamarckian Inheritance Improves Robot Evolution in Dynamic Environments
 authors: Jie Luo, Karine Miras, Carlo Longhi, Oliver Weissl, Agoston E. Eiben
-link: https://ieeexplore.ieee.org/abstract/document/11196059
+link: https://doi.org/10.1109/TEVC.2025.3619278
 categories:
 - papers
 - journal
 ---
+**[Update 08.2026]** I am happy to announce that this work is now published in [IEEE Transactions on Evolutionary Computation](https://doi.org/10.1109/TEVC.2025.3619278) (Vol. 30, No. 4, 2026).
 
-During my time as Research Assistant at the CI-Group @ VU Amsterdam, I worked with [Dr. Jie Luo](https://scholar.google.com/citations?user=fqimtqwAAAAJ&hl=en) on a study investigating Lamarckian Inheritance in Modular Robots. My main contribution was replicating the simulator experiments with real robots, allowing for better understanding of behavior and sim2real gap.
+**[Original 28.03.2024]** During my time as Research Assistant at the CI-Group @ VU Amsterdam, I worked with [Dr. Jie Luo](https://scholar.google.com/citations?user=fqimtqwAAAAJ&hl=en) on a study investigating Lamarckian Inheritance in Modular Robots. My main contribution was replicating the simulator experiments with real robots, allowing for better understanding of behavior and sim2real gap.
 
 ### Abstract:
 

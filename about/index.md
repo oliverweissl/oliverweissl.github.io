@@ -6,7 +6,7 @@ layout: page
 
 <img alt="" src="/images/portrait.jpeg" width="175" height="175" class="portrait-float" />
 
-Hello, I'm Oliver Weißl, a researcher at fortiss GmbH and a PhD candidate at the Technical University of Munich (TUM). My academic journey began with a Bachelor's degree in Artificial Intelligence from Vrije Universiteit (VU) Amsterdam, followed by a Master's in Information Studies at the University of Amsterdam (UvA).
+Hello, I'm Oliver Weißl, a Senior Data Scientist at [NorCom](https://www.norcom.de/) and a PhD candidate at the Technical University of Munich (TUM). Previously, I was a researcher at fortiss GmbH. My academic journey began with a Bachelor's degree in Artificial Intelligence from Vrije Universiteit (VU) Amsterdam, followed by a Master's in Information Studies at the University of Amsterdam (UvA).
 
 My research focuses on testing of Deep Learning Systems, by exploiting knowledge encoded in latent spaces. Testing plays a critical role across various domains to ensure that a systems function as intended. However, the complexity of DL models makes effective testing both more challenging and more essential.
 

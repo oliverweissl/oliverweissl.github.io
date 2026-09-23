@@ -67,3 +67,19 @@
   font-size: 0.9rem;
   font-weight: 500;
 }
+
+@media (max-width: 48em) {
+  .category-chart {
+    width: 100%;
+    gap: .35rem;
+    height: 220px;
+  }
+  .category-bar {
+    min-width: 0;
+    max-width: 50px;
+  }
+  .category-label {
+    font-size: .7rem;
+    overflow-wrap: anywhere;
+  }
+}

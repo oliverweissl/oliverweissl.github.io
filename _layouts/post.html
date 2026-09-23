@@ -17,7 +17,7 @@ layout: default
   </div>
 
   {{ content }}
-  <button class="paper-button" onclick="window.open('{{ page.link }}', '_blank')">To the paper</button>
+  <button class="paper-button" onclick="window.open('{{ page.link }}', '_blank')">{{ page.button_label | default: "To the paper" }}</button>
 </div>
 
 <div class="related">
