@@ -4,6 +4,10 @@ title: Lamarckian Inheritance Improves Robot Evolution in Dynamic Environments
 authors: Jie Luo, Karine Miras, Carlo Longhi, Oliver Weissl, Agoston E. Eiben
 link: https://doi.org/10.1109/TEVC.2025.3619278
 permalink: /papers/journal/2024/03/28/lamarckian/
+venue: "IEEE TEVC"
+teaser_row:
+  - /images/teasers/lamarckian/flat_terrain2.jpg
+  - /images/teasers/lamarckian/rugged_terrain2.jpg
 categories:
 - journal-paper
 ---

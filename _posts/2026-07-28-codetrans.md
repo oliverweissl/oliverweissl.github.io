@@ -3,6 +3,7 @@ layout: post
 title: "CodeTransBenchmark: Evaluating LLM-based Code Translation and Repair Across Programming Languages"
 authors: Vera Kowalczuk, Oliver Weißl, Severin Kacianka, Andrea Stocco
 link: https://arxiv.org/abs/2609.20257
+venue: "arXiv"
 categories:
 - preprint
 ---
