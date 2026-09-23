@@ -33,74 +33,90 @@ Other research interests include classical and population-based optimization, ev
 <ol class="timeline">
   <li class="tl-item tl-work tl-current w-from-dot">
     <span class="tl-dot"></span>
-    <span class="tl-date">08.2026 – now</span>
-    <h3 class="tl-title">Senior Data Scientist</h3>
-    <p class="tl-org"><a href="https://www.norcom.de/">NorCom</a>, Munich</p>
-    <p class="tl-desc">Scaling RAG solutions from thousands to millions of files.</p>
+    <div class="tl-body">
+      <span class="tl-date">08.2026 – now</span>
+      <h3 class="tl-title">Senior Data Scientist</h3>
+      <p class="tl-org"><a href="https://www.norcom.de/">NorCom</a>, Munich</p>
+      <p class="tl-desc">Scaling RAG solutions from thousands to millions of files.</p>
+    </div>
   </li>
 
   <li class="tl-item tl-edu tl-current">
     <span class="tl-dot"></span>
-    <span class="tl-date">09.2024 – now</span>
-    <h3 class="tl-title">PhD in Generative Testing of DL Systems</h3>
-    <p class="tl-org"><a href="https://www.tum.de/">Technical University of Munich</a></p>
+    <div class="tl-body">
+      <span class="tl-date">09.2024 – now</span>
+      <h3 class="tl-title">PhD in Generative Testing of DL Systems</h3>
+      <p class="tl-org"><a href="https://www.tum.de/">Technical University of Munich</a></p>
+    </div>
   </li>
 
   <li class="tl-item tl-work">
     <span class="tl-dot"></span>
-    <span class="tl-date">09.2024 – 06.2026</span>
-    <h3 class="tl-title">Researcher</h3>
-    <p class="tl-org"><a href="https://www.fortiss.org/">fortiss GmbH</a>, Munich</p>
-    <p class="tl-desc">Applied AI research in industry and public-sector projects; supervised Bachelor's and Master's projects on deep learning system testing.</p>
+    <div class="tl-body">
+      <span class="tl-date">09.2024 – 06.2026</span>
+      <h3 class="tl-title">Researcher</h3>
+      <p class="tl-org"><a href="https://www.fortiss.org/">fortiss GmbH</a>, Munich</p>
+      <p class="tl-desc">Applied AI research in industry and public-sector projects; supervised Bachelor's and Master's projects on deep learning system testing.</p>
+    </div>
   </li>
 
   <li class="tl-item tl-edu">
     <span class="tl-dot"></span>
-    <span class="tl-date">09.2023 – 07.2024</span>
-    <h3 class="tl-title">MSc Information Studies: Data Science</h3>
-    <p class="tl-org"><a href="https://www.uva.nl/en">University of Amsterdam</a></p>
-    <p class="tl-desc">Thesis: <a href="/papers/conference/thesis/2024/09/06/equivdec/">Machine Learning Decoder for Topological Codes in 3 Dimensions</a></p>
+    <div class="tl-body">
+      <span class="tl-date">09.2023 – 07.2024</span>
+      <h3 class="tl-title">MSc Information Studies: Data Science</h3>
+      <p class="tl-org"><a href="https://www.uva.nl/en">University of Amsterdam</a></p>
+      <p class="tl-desc">Thesis: <a href="/papers/conference/thesis/2024/09/06/equivdec/">Machine Learning Decoder for Topological Codes in 3 Dimensions</a></p>
+    </div>
   </li>
 
   <li class="tl-item tl-work">
     <span class="tl-dot"></span>
-    <span class="tl-date">09.2023 – 04.2024</span>
-    <h3 class="tl-title">Research Assistant</h3>
-    <p class="tl-org"><a href="https://cs.vu.nl/ci/">CI Group, VU Amsterdam</a></p>
-    <p class="tl-desc">My responsibilities were the development of <a href="https://github.com/ci-group/revolve2">Revolve2</a>, a simulator geared towards evolutionary computing in the domain of robotics, and assisting in scientific projects.</p>
+    <div class="tl-body">
+      <span class="tl-date">09.2023 – 04.2024</span>
+      <h3 class="tl-title">Research Assistant</h3>
+      <p class="tl-org"><a href="https://cs.vu.nl/ci/">CI Group, VU Amsterdam</a></p>
+      <p class="tl-desc">My responsibilities were the development of <a href="https://github.com/ci-group/revolve2">Revolve2</a>, a simulator geared towards evolutionary computing in the domain of robotics, and assisting in scientific projects.</p>
+    </div>
   </li>
 
   <li class="tl-item tl-edu">
     <span class="tl-dot"></span>
-    <span class="tl-date">10.2022 – 02.2023</span>
-    <h3 class="tl-title">Erasmus Semester in Computer Science</h3>
-    <p class="tl-org"><a href="https://www.uibk.ac.at/en/">University of Innsbruck</a></p>
+    <div class="tl-body">
+      <span class="tl-date">10.2022 – 02.2023</span>
+      <h3 class="tl-title">Erasmus Semester in Computer Science</h3>
+      <p class="tl-org"><a href="https://www.uibk.ac.at/en/">University of Innsbruck</a></p>
+    </div>
   </li>
 
   <li class="tl-item tl-work w-to-dot">
     <span class="tl-dot"></span>
     <span class="tl-fork" aria-hidden="true"></span>
-    <span class="tl-date">04.2022 – 07.2024</span>
-    <h3 class="tl-title">Teaching Assistant</h3>
-    <p class="tl-org"><a href="https://vu.nl/en">VU Amsterdam</a></p>
-    <details class="tl-details">
-      <summary>Courses I have been teaching and assisting in</summary>
-      <ul>
-        <li><a href="https://studiegids.vu.nl/en/Bachelor/2023-2024/artificial-intelligence/XB_0026#/">Project Collective Intelligence</a></li>
-        <li><a href="https://studiegids.vu.nl/en/Bachelor/2023-2024/artificial-intelligence/XB_0013#/">Human-Computer Interaction</a></li>
-        <li><a href="https://studiegids.vu.nl/en/Bachelor/2023-2024/artificial-intelligence/X_400083#/">Knowledge &amp; Data</a></li>
-        <li><a href="https://studiegids.vu.nl/en/Bachelor/2023-2024/artificial-intelligence/X_400154#/">Machine Learning</a></li>
-        <li><a href="https://studiegids.vu.nl/en/Bachelor/2023-2024/artificial-intelligence/XB_0025#/">Computational Intelligence</a></li>
-      </ul>
-    </details>
+    <div class="tl-body">
+      <span class="tl-date">04.2022 – 07.2024</span>
+      <h3 class="tl-title">Teaching Assistant</h3>
+      <p class="tl-org"><a href="https://vu.nl/en">VU Amsterdam</a></p>
+      <details class="tl-details">
+        <summary>Courses I have been teaching and assisting in</summary>
+        <ul>
+          <li><a href="https://studiegids.vu.nl/en/Bachelor/2023-2024/artificial-intelligence/XB_0026#/">Project Collective Intelligence</a></li>
+          <li><a href="https://studiegids.vu.nl/en/Bachelor/2023-2024/artificial-intelligence/XB_0013#/">Human-Computer Interaction</a></li>
+          <li><a href="https://studiegids.vu.nl/en/Bachelor/2023-2024/artificial-intelligence/X_400083#/">Knowledge &amp; Data</a></li>
+          <li><a href="https://studiegids.vu.nl/en/Bachelor/2023-2024/artificial-intelligence/X_400154#/">Machine Learning</a></li>
+          <li><a href="https://studiegids.vu.nl/en/Bachelor/2023-2024/artificial-intelligence/XB_0025#/">Computational Intelligence</a></li>
+        </ul>
+      </details>
+    </div>
   </li>
 
   <li class="tl-item tl-edu w-none e-to-dot">
     <span class="tl-dot"></span>
-    <span class="tl-date">09.2020 – 07.2023</span>
-    <h3 class="tl-title">BSc Artificial Intelligence</h3>
-    <p class="tl-org"><a href="https://vu.nl/en">Vrije Universiteit Amsterdam</a>, Honors Programme</p>
-    <p class="tl-desc">Thesis: <a href="/papers/conference/thesis/2023/12/05/morphnov/">Morphological-Novelty in Modular Robot Evolution</a></p>
+    <div class="tl-body">
+      <span class="tl-date">09.2020 – 07.2023</span>
+      <h3 class="tl-title">BSc Artificial Intelligence</h3>
+      <p class="tl-org"><a href="https://vu.nl/en">Vrije Universiteit Amsterdam</a>, Honors Programme</p>
+      <p class="tl-desc">Thesis: <a href="/papers/conference/thesis/2023/12/05/morphnov/">Morphological-Novelty in Modular Robot Evolution</a></p>
+    </div>
   </li>
 </ol>
 

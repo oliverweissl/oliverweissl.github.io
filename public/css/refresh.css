@@ -462,6 +462,7 @@
   --w: .6rem;
   --e: 2.2rem;
   --dot: .6rem;
+  --origin: 0rem;
   position: relative;
   padding: 0 0 1.5rem 3.6rem;
 }
@@ -475,10 +476,10 @@
   background: var(--ink);
 }
 .tl-item::before {
-  left: calc(var(--w) - 1px);
+  left: calc(var(--origin) + var(--w) - 1px);
 }
 .tl-item::after {
-  left: calc(var(--e) - 1px);
+  left: calc(var(--origin) + var(--e) - 1px);
 }
 .w-none::before,
 .e-none::after {
@@ -506,10 +507,10 @@
   background: var(--ink);
 }
 .tl-work .tl-dot {
-  left: calc(var(--w) - .4rem);
+  left: calc(var(--origin) + var(--w) - .4rem);
 }
 .tl-edu .tl-dot {
-  left: calc(var(--e) - .4rem);
+  left: calc(var(--origin) + var(--e) - .4rem);
   background: var(--paper);
 }
 .tl-current .tl-dot {
@@ -518,7 +519,7 @@
 /* Work lane branches off the education lane */
 .tl-fork {
   position: absolute;
-  left: calc(var(--w) - 1px);
+  left: calc(var(--origin) + var(--w) - 1px);
   top: var(--dot);
   width: calc(var(--e) - var(--w));
   height: 1.5rem;
@@ -554,6 +555,32 @@
 .tl-details ul {
   margin: .35rem 0 0;
   font-size: .9rem;
+}
+
+/* Desktop: work entries left of the lanes, education entries right */
+@media (min-width: 48.01em) {
+  .tl-legend {
+    justify-content: center;
+  }
+  .tl-item {
+    --origin: calc(50% - 1.4rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 2.8rem minmax(0, 1fr);
+    padding: 0 0 1.5rem;
+  }
+  .tl-work .tl-body {
+    grid-column: 1;
+    padding-right: .75rem;
+    text-align: right;
+  }
+  .tl-edu .tl-body {
+    grid-column: 3;
+    padding-left: .75rem;
+  }
+  .tl-work .tl-details ul {
+    list-style-position: inside;
+    padding-left: 0;
+  }
 }
 
 @media (max-width: 48em) {
