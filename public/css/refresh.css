@@ -747,3 +747,135 @@ body,
     animation: none;
   }
 }
+
+/*
+ * Impossible geometry, used sparingly (desktop only)
+ */
+.frame-corner {
+  display: none;
+}
+@media (min-width: 48.01em) {
+  /*
+   * 1. Impossible corner: the top-left joint is drawn mitred, yet the header's
+   *    face line runs straight through it to the page edge, as if the header
+   *    also passed over the sidebar. The sidebar's face line starts where the
+   *    two meet on the mitre. Both lines fade out along their beams.
+   */
+  .frame-corner {
+    --f: .12;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    pointer-events: none;
+  }
+  .frame-corner::before,
+  .frame-corner::after {
+    content: "";
+    position: absolute;
+  }
+  .frame-corner::before {
+    top: calc(var(--f) * var(--head-h));
+    left: 0;
+    width: calc(var(--sidebar-w) + 160px);
+    height: 1px;
+    background: linear-gradient(to right, var(--ink) var(--sidebar-w), transparent);
+  }
+  .frame-corner::after {
+    top: calc(var(--f) * var(--head-h));
+    left: calc(var(--f) * var(--sidebar-w));
+    width: 1px;
+    height: calc(var(--head-h) + 120px);
+    background: linear-gradient(to bottom, var(--ink) calc((1 - var(--f)) * var(--head-h)), transparent);
+  }
+
+  /*
+   * 2. Impossible slab: the white box gets a depth edge, but its right side is
+   *    seen from the left (depth goes down-right) while its bottom is seen from
+   *    the right (depth goes down-left). The two faces split at the
+   *    bottom-right corner, which no real box can do.
+   */
+  .container.content {
+    --d: 10px;
+    --edge: rgba(255, 255, 255, .7);
+    --diag: transparent calc(50% - .6px), var(--edge) calc(50% - .6px), var(--edge) calc(50% + .6px), transparent calc(50% + .6px);
+    position: relative;
+  }
+  .container.content::before,
+  .container.content::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+  }
+  /* leave room between the box's depth edge and the footer */
+  .scrollable-content {
+    max-height: calc(100vh - 275px);
+  }
+  /* right face, depth (+d, +d) */
+  .container.content::before {
+    top: 0;
+    left: 100%;
+    width: var(--d);
+    height: calc(100% + var(--d));
+    background:
+      linear-gradient(to top right, var(--diag)) left top / var(--d) var(--d) no-repeat,
+      linear-gradient(var(--edge), var(--edge)) right bottom / 1px calc(100% - var(--d)) no-repeat,
+      linear-gradient(to top right, var(--diag)) left bottom / var(--d) var(--d) no-repeat;
+  }
+  /* bottom face, depth (-d, +d), plus the base line joining both faces */
+  .container.content::after {
+    top: 100%;
+    left: calc(-1 * var(--d));
+    width: calc(100% + 2 * var(--d));
+    height: var(--d);
+    background:
+      linear-gradient(to bottom right, var(--diag)) left top / var(--d) var(--d) no-repeat,
+      linear-gradient(to bottom right, var(--diag)) right var(--d) top 0 / var(--d) var(--d) no-repeat,
+      linear-gradient(var(--edge), var(--edge)) left bottom / 100% 1px no-repeat;
+  }
+}
+
+/*
+ * 3. Post Catalogue: bars drawn as prisms (top face and right side face), with
+ *    the front-right edge continuing up through the top face where it should
+ *    be hidden, as in the impossible cube.
+ */
+.category-bar-container {
+  --d: 10px;
+  --diag: transparent calc(50% - .6px), var(--ink) calc(50% - .6px), var(--ink) calc(50% + .6px), transparent calc(50% + .6px);
+  overflow: visible;
+}
+.category-bar-container::before,
+.category-bar-container::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+/* right side face, depth (+d, -d) */
+.category-bar-container::before {
+  top: calc(-1 * var(--d) - 1px);
+  left: calc(100% + 1px);
+  width: var(--d);
+  height: calc(100% + var(--d) + 2px);
+  background:
+    linear-gradient(to bottom right, var(--diag)) left top / var(--d) var(--d) no-repeat,
+    linear-gradient(var(--ink), var(--ink)) right top / 1px calc(100% - var(--d)) no-repeat,
+    linear-gradient(to bottom right, var(--diag)) left bottom / var(--d) var(--d) no-repeat;
+}
+/* top face, plus the edge that shows through it */
+.category-bar-container::after {
+  top: calc(-1 * var(--d) - 1px);
+  left: -1px;
+  width: calc(100% + var(--d) + 2px);
+  height: var(--d);
+  background:
+    linear-gradient(to bottom right, var(--diag)) left top / var(--d) var(--d) no-repeat,
+    linear-gradient(var(--ink), var(--ink)) right top / calc(100% - var(--d)) 1px no-repeat,
+    linear-gradient(var(--ink), var(--ink)) right var(--d) top 0 / 1px 100% no-repeat;
+}
+@media (max-width: 48em) {
+  .category-bar-container {
+    --d: 6px;
+  }
+}
