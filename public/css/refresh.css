@@ -40,6 +40,14 @@
 .footer {
   background-color: var(--frame);
 }
+/* Frame panels read as one block: no borders between or around them */
+html,
+body,
+.sidebar,
+.masthead,
+.footer {
+  border: none;
+}
 .sidebar-nav-item {
   border-top-color: var(--frame-line);
 }
