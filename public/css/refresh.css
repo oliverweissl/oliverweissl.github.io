@@ -715,3 +715,29 @@ body,
     background: linear-gradient(to bottom right, transparent calc(50% - .75px), var(--ink) calc(50% - .75px), var(--ink) calc(50% + .75px), transparent calc(50% + .75px));
   }
 }
+
+
+/* 404: endless zoom into nested, rotating squares (Droste effect) */
+.droste-wrap {
+  clear: both;
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 2rem;
+}
+.droste {
+  width: min(320px, 80%);
+  height: auto;
+  color: var(--ink);
+}
+.droste-zoom {
+  animation: droste 1.6s linear infinite;
+}
+@keyframes droste {
+  from { transform: rotate(0deg) scale(1); }
+  to { transform: rotate(-8deg) scale(1.16279); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .droste-zoom {
+    animation: none;
+  }
+}
