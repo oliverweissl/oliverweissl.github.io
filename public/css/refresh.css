@@ -2,7 +2,7 @@
  * Visual refresh
  *
  * Layered on top of naringu.css: keeps the monochrome, hairline-border look
- * and adds depth (hatched offset shadows), a monospace meta layer, post cards,
+ * and adds depth (shaded frame, offset shade), a monospace meta layer, post cards,
  * the latent-walk hero and page transitions.
  */
 
@@ -11,8 +11,6 @@
   --paper: #fff;
   --muted: #505050;
   --mono: "IBM Plex Mono", Menlo, Monaco, "Courier New", monospace;
-  --hatch: repeating-linear-gradient(45deg, rgba(255, 255, 255, .55) 0 1px, transparent 1px 7px);
-  --hatch-dark: repeating-linear-gradient(45deg, #888 0 1px, transparent 1px 8px);
 }
 
 /* Page transitions: cross-fade between pages, sidebar and masthead stay put */
@@ -26,23 +24,43 @@
   view-transition-name: masthead;
 }
 
-/* Hatched offset shadow behind the main content box */
-.wrap {
-  z-index: 0;
+/*
+ * Shaded frame
+ *
+ * Sidebar, masthead and footer are light-grey "frame" panels around the dark
+ * spectrogram stage; the white content box sits on it with a flat offset shade.
+ */
+:root {
+  --frame: #efefef;
+  --frame-line: #d6d6d6;
+}
+.theme-6dd .sidebar,
+.sidebar,
+.masthead,
+.footer {
+  background-color: var(--frame);
+}
+.sidebar-nav-item {
+  border-top-color: var(--frame-line);
+}
+.sidebar-nav {
+  border-bottom-color: var(--frame-line);
 }
 .container.content {
-  position: relative;
   border: 1px solid var(--ink);
+  box-shadow: 12px 12px 0 rgba(255, 255, 255, .16);
 }
-.container.content::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  transform: translate(12px, 12px);
-  background: var(--hatch);
-  border: 1px solid rgba(255, 255, 255, .55);
-  pointer-events: none;
+.masthead .container {
+  background: transparent;
+}
+.masthead-title small,
+.footer {
+  font-family: var(--mono);
+}
+.masthead-title small {
+  font-size: .7rem;
+  color: var(--muted);
+  margin-left: .35rem;
 }
 
 /* Monospace meta layer */
@@ -278,8 +296,8 @@
 }
 
 @media (max-width: 48em) {
-  .container.content::after {
-    display: none;
+  .container.content {
+    box-shadow: none;
   }
   .hero {
     grid-template-columns: 1fr;
@@ -321,4 +339,15 @@
 .posts.scrollable-content {
   padding-left: 6px;
   margin-left: -6px;
+}
+
+/* Catalogue dates: ISO format in the monospace column */
+.post-list-date {
+  flex-basis: 6.5rem;
+  font-size: .8rem;
+}
+@media (max-width: 48em) {
+  .post-list-date {
+    flex-basis: auto;
+  }
 }
