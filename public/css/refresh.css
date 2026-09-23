@@ -659,7 +659,15 @@ body,
   .footer {
     z-index: 11;
   }
+  /* Nav buttons: no dividers, 80% wide, centred */
+  .sidebar-nav {
+    border-bottom: none;
+    padding-top: .75rem;
+  }
+  .sidebar-nav-item,
   .sidebar-nav-item:first-child {
+    width: 80%;
+    margin: 0 auto .25rem;
     border-top: none;
   }
 
