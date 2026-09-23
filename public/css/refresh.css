@@ -477,35 +477,45 @@
   position: relative;
   padding: 0 0 1.5rem 3.6rem;
 }
-.tl-item::before,
-.tl-item::after {
+/*
+ * Lane segments: each entry row draws the part of both lanes above and below
+ * its dot. "on" = a role on that lane is running (thick line), "idle" = gap
+ * between roles (dotted), "cap" = a role ended here.
+ */
+.tl-seg {
+  position: absolute;
+  width: 3px;
+}
+.tl-seg-top {
+  top: 0;
+  height: var(--dot);
+}
+.tl-seg-bottom {
+  top: var(--dot);
+  bottom: 0;
+}
+.tl-seg-w {
+  left: calc(var(--origin) + var(--w) - 1.5px);
+}
+.tl-seg-e {
+  left: calc(var(--origin) + var(--e) - 1.5px);
+}
+.tl-seg.on {
+  background: var(--ink);
+}
+.tl-seg.idle {
+  width: 0;
+  margin-left: 1px;
+  border-left: 1px dashed #9a9a9a;
+}
+.tl-seg.cap::before {
   content: "";
   position: absolute;
   top: 0;
-  bottom: 0;
-  width: 2px;
+  left: -4px;
+  width: 11px;
+  height: 3px;
   background: var(--ink);
-}
-.tl-item::before {
-  left: calc(var(--origin) + var(--w) - 1px);
-}
-.tl-item::after {
-  left: calc(var(--origin) + var(--e) - 1px);
-}
-.w-none::before,
-.e-none::after {
-  display: none;
-}
-.w-from-dot::before {
-  top: var(--dot);
-}
-.w-to-dot::before {
-  bottom: auto;
-  height: var(--dot);
-}
-.e-to-dot::after {
-  bottom: auto;
-  height: var(--dot);
 }
 .tl-dot {
   position: absolute;
@@ -624,39 +634,17 @@
 .tl-item:hover .tl-logo {
   filter: none;
 }
-
-/* Timeline: time bar per entry on a shared scale (ticks = years) */
-.tl-legend-scale::before {
-  display: none !important;
+.tl-legend .tl-legend-line::before,
+.tl-legend .tl-legend-gap::before {
+  width: 1.1rem;
+  height: 0;
+  border-radius: 0;
+  border-width: 0;
+  vertical-align: middle;
 }
-.tl-legend-scale {
-  margin-left: .5rem;
+.tl-legend .tl-legend-line::before {
+  border-top: 3px solid var(--ink);
 }
-.tl-duration {
-  margin-left: .5rem;
-  padding: 0 .3rem;
-  border: 1px solid var(--frame-line);
-  font-size: .65rem;
-}
-.tl-span {
-  position: relative;
-  display: block;
-  height: 8px;
-  margin: .3rem 0 .35rem;
-  border: 1px solid var(--ink);
-  background: linear-gradient(to right, var(--frame-line) 1px, transparent 1px) 0 0 / calc(100% * 12 / var(--total)) 100%;
-}
-.tl-span::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: calc(var(--s) / var(--total) * 100%);
-  width: calc((var(--e) - var(--s)) / var(--total) * 100%);
-  min-width: 3px;
-  background: var(--ink);
-}
-.tl-edu .tl-span::after {
-  background: repeating-linear-gradient(45deg, var(--ink) 0 1.5px, var(--paper) 1.5px 4px);
-  outline: 1px solid var(--ink);
+.tl-legend .tl-legend-gap::before {
+  border-top: 1px dashed #9a9a9a;
 }
