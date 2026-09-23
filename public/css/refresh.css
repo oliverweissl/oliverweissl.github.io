@@ -238,33 +238,38 @@
   transform: translate(-4px, -4px);
   box-shadow: 4px 4px 0 var(--ink);
 }
+/* Every preview sits in the same fixed-height frame, about the height of the text part */
+.post-card {
+  --teaser-h: 180px;
+}
 .post-card-teaser {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  height: var(--teaser-h);
   margin: -1.25rem -1.25rem 1rem;
+  padding: .75rem 1rem;
   border-bottom: 1px solid var(--ink);
+  background: var(--paper);
   overflow: hidden;
 }
 .post-card-teaser img {
-  width: 100%;
-  margin: 0;
-  border-radius: 0;
-  filter: grayscale(1);
-  transition: filter .3s ease;
-}
-/* Several separate figures side by side, e.g. when no wide teaser exists */
-.post-card-teaser-row {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  padding: 1rem;
-  background: var(--paper);
-}
-.post-card-teaser-row img {
   flex: 0 1 auto;
   min-width: 0;
   width: auto;
+  height: auto;
   max-width: 100%;
-  height: 170px;
+  max-height: 100%;
+  margin: 0;
+  border-radius: 0;
   object-fit: contain;
+  filter: grayscale(1);
+  transition: filter .3s ease;
+}
+/* Several separate figures side by side share the frame height */
+.post-card-teaser-row img {
+  height: 100%;
 }
 .post-card:hover .post-card-teaser img,
 .post-card:focus-within .post-card-teaser img {
@@ -333,8 +338,12 @@
   .post-card-title {
     font-size: 1.15rem;
   }
-  .post-card-teaser-row img {
-    height: 110px;
+  .post-card {
+    --teaser-h: 130px;
+  }
+  .post-card-teaser {
+    gap: .5rem;
+    padding: .5rem;
   }
 }
 
