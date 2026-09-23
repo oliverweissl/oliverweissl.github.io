@@ -624,3 +624,39 @@
 .tl-item:hover .tl-logo {
   filter: none;
 }
+
+/* Timeline: time bar per entry on a shared scale (ticks = years) */
+.tl-legend-scale::before {
+  display: none !important;
+}
+.tl-legend-scale {
+  margin-left: .5rem;
+}
+.tl-duration {
+  margin-left: .5rem;
+  padding: 0 .3rem;
+  border: 1px solid var(--frame-line);
+  font-size: .65rem;
+}
+.tl-span {
+  position: relative;
+  display: block;
+  height: 8px;
+  margin: .3rem 0 .35rem;
+  border: 1px solid var(--ink);
+  background: linear-gradient(to right, var(--frame-line) 1px, transparent 1px) 0 0 / calc(100% * 12 / var(--total)) 100%;
+}
+.tl-span::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--s) / var(--total) * 100%);
+  width: calc((var(--e) - var(--s)) / var(--total) * 100%);
+  min-width: 3px;
+  background: var(--ink);
+}
+.tl-edu .tl-span::after {
+  background: repeating-linear-gradient(45deg, var(--ink) 0 1.5px, var(--paper) 1.5px 4px);
+  outline: 1px solid var(--ink);
+}
