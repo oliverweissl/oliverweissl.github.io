@@ -643,7 +643,6 @@ body,
     --head-h: 62px;
     --foot-h: 50px;
     --sidebar-w: 14rem;
-    --bevel: 14px;
   }
   .masthead {
     position: relative;
@@ -652,9 +651,10 @@ body,
     margin-left: calc(-1 * var(--sidebar-w));
     padding-left: var(--sidebar-w);
   }
+  /* Sidebar tucks slightly under the footer so no stage pixels show between */
   .sidebar {
     top: var(--head-h);
-    bottom: var(--foot-h);
+    bottom: calc(var(--foot-h) - 4px);
   }
   .footer {
     z-index: 11;
@@ -662,28 +662,48 @@ body,
   .sidebar-nav-item:first-child {
     border-top: none;
   }
-  .container.content {
-    position: relative;
-  }
 
-  .container.content::before,
-  .container.content::after {
+  /* Black frame: outer page edge, inner edge along the stage, mitred corners */
+  body {
+    border: 1px solid var(--ink);
+  }
+  /* Inner edge lines start at the stage corner, not over the sidebar */
+  .masthead::after,
+  .footer::after {
     content: "";
     position: absolute;
-    inset: calc(-1 * var(--bevel));
+    left: var(--sidebar-w);
+    right: 0;
+    height: 1px;
+    background: var(--ink);
+  }
+  .masthead::after {
+    bottom: 0;
+  }
+  .footer::after {
+    top: 0;
+  }
+  .sidebar {
+    border-right: 1px solid var(--ink);
+  }
+  .masthead::before,
+  .footer::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: var(--sidebar-w);
     pointer-events: none;
   }
-  /* Outer outline */
-  .container.content::before {
-    border: 1px solid rgba(255, 255, 255, .7);
+  /* Top-left mitre: page corner to stage corner */
+  .masthead::before {
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(to top right, transparent calc(50% - .75px), var(--ink) calc(50% - .75px), var(--ink) calc(50% + .75px), transparent calc(50% + .75px));
   }
-  /* Corner diagonals from the box corner to the outline corner */
-  .container.content::after {
-    --line: rgba(255, 255, 255, .7);
-    background:
-      linear-gradient(to top right, transparent calc(50% - .75px), var(--line) calc(50% - .75px), var(--line) calc(50% + .75px), transparent calc(50% + .75px)) left top / var(--bevel) var(--bevel) no-repeat,
-      linear-gradient(to bottom right, transparent calc(50% - .75px), var(--line) calc(50% - .75px), var(--line) calc(50% + .75px), transparent calc(50% + .75px)) right top / var(--bevel) var(--bevel) no-repeat,
-      linear-gradient(to bottom right, transparent calc(50% - .75px), var(--line) calc(50% - .75px), var(--line) calc(50% + .75px), transparent calc(50% + .75px)) left bottom / var(--bevel) var(--bevel) no-repeat,
-      linear-gradient(to top right, transparent calc(50% - .75px), var(--line) calc(50% - .75px), var(--line) calc(50% + .75px), transparent calc(50% + .75px)) right bottom / var(--bevel) var(--bevel) no-repeat;
+  /* Bottom-left mitre */
+  .footer::before {
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom right, transparent calc(50% - .75px), var(--ink) calc(50% - .75px), var(--ink) calc(50% + .75px), transparent calc(50% + .75px));
   }
 }
