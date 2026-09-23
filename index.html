@@ -48,6 +48,10 @@ title: Home
     <div class="post-card-teaser">
       <img src="{{ post.teaser | relative_url }}" alt="" loading="lazy">
     </div>
+    {% elsif post.teaser_row %}
+    <div class="post-card-teaser post-card-teaser-row">
+      {% for image in post.teaser_row %}<img src="{{ image | relative_url }}" alt="" loading="lazy">{% endfor %}
+    </div>
     {% endif %}
     <div class="post-card-meta">
       <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>

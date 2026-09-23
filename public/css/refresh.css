@@ -2,7 +2,7 @@
  * Visual refresh
  *
  * Layered on top of naringu.css: keeps the monochrome, hairline-border look
- * and adds depth (shaded frame, offset shade), a monospace meta layer, post cards,
+ * and adds a shaded frame, a monospace meta layer, post cards,
  * the latent-walk hero and page transitions.
  */
 
@@ -48,7 +48,6 @@
 }
 .container.content {
   border: 1px solid var(--ink);
-  box-shadow: 12px 12px 0 rgba(255, 255, 255, .16);
 }
 .masthead .container {
   background: transparent;
@@ -251,6 +250,20 @@
   filter: grayscale(1);
   transition: filter .3s ease;
 }
+/* Several separate figures side by side, e.g. when no wide teaser exists */
+.post-card-teaser-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  background: var(--paper);
+}
+.post-card-teaser-row img {
+  width: auto;
+  max-width: 45%;
+  height: 170px;
+  object-fit: contain;
+}
 .post-card:hover .post-card-teaser img,
 .post-card:focus-within .post-card-teaser img {
   filter: none;
@@ -296,9 +309,6 @@
 }
 
 @media (max-width: 48em) {
-  .container.content {
-    box-shadow: none;
-  }
   .hero {
     grid-template-columns: 1fr;
     gap: 1.25rem;
@@ -320,6 +330,9 @@
   }
   .post-card-title {
     font-size: 1.15rem;
+  }
+  .post-card-teaser-row img {
+    height: 110px;
   }
 }
 
@@ -349,5 +362,208 @@
 @media (max-width: 48em) {
   .post-list-date {
     flex-basis: auto;
+  }
+}
+
+/*
+ * About: "now" box
+ */
+.now-box {
+  position: relative;
+  clear: both;
+  margin: 2rem 0;
+  padding: 1.25rem 1.25rem 1rem;
+  border: 1px solid var(--ink);
+}
+.now-label {
+  position: absolute;
+  top: -.7rem;
+  left: 1rem;
+  padding: 0 .4rem;
+  background: var(--paper);
+  font-family: var(--mono);
+  font-size: .75rem;
+}
+.now-label::before {
+  content: "";
+  display: inline-block;
+  width: .5rem;
+  height: .5rem;
+  margin-right: .35rem;
+  border-radius: 50%;
+  background: var(--ink);
+  animation: now-pulse 2s ease-in-out infinite;
+}
+@keyframes now-pulse {
+  50% { opacity: .2; }
+}
+.now-box ul {
+  margin-bottom: 1rem;
+  padding-left: 1.1rem;
+}
+.now-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+.theme-6dd .container a.action-button,
+.action-button {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .35rem .75rem;
+  border: 1px solid var(--ink);
+  background-image: none;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: .75rem;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.theme-6dd .container a.action-button-primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+.theme-6dd .container a.action-button:hover,
+.theme-6dd .container a.action-button:focus {
+  text-decoration: none;
+  transform: translate(-2px, -2px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+/*
+ * About: timeline with work (main lane) and education (branch lane)
+ */
+.tl-legend {
+  display: flex;
+  gap: 1rem;
+  font-family: var(--mono);
+  font-size: .7rem;
+  color: var(--muted);
+}
+.tl-legend span::before {
+  content: "";
+  display: inline-block;
+  width: .6rem;
+  height: .6rem;
+  margin-right: .35rem;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  vertical-align: -1px;
+}
+.tl-legend-work::before {
+  background: var(--ink);
+}
+.timeline {
+  margin: 1rem 0 2rem;
+  padding: 0;
+  list-style: none;
+}
+.tl-item {
+  --w: .6rem;
+  --e: 2.2rem;
+  --dot: .6rem;
+  position: relative;
+  padding: 0 0 1.5rem 3.6rem;
+}
+.tl-item::before,
+.tl-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--ink);
+}
+.tl-item::before {
+  left: calc(var(--w) - 1px);
+}
+.tl-item::after {
+  left: calc(var(--e) - 1px);
+}
+.w-none::before,
+.e-none::after {
+  display: none;
+}
+.w-from-dot::before {
+  top: var(--dot);
+}
+.w-to-dot::before {
+  bottom: auto;
+  height: var(--dot);
+}
+.e-to-dot::after {
+  bottom: auto;
+  height: var(--dot);
+}
+.tl-dot {
+  position: absolute;
+  z-index: 1;
+  top: calc(var(--dot) - .4rem);
+  width: .8rem;
+  height: .8rem;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--ink);
+}
+.tl-work .tl-dot {
+  left: calc(var(--w) - .4rem);
+}
+.tl-edu .tl-dot {
+  left: calc(var(--e) - .4rem);
+  background: var(--paper);
+}
+.tl-current .tl-dot {
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--ink);
+}
+/* Work lane branches off the education lane */
+.tl-fork {
+  position: absolute;
+  left: calc(var(--w) - 1px);
+  top: var(--dot);
+  width: calc(var(--e) - var(--w));
+  height: 1.5rem;
+  border-left: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  border-bottom-left-radius: 1rem;
+}
+.tl-date {
+  display: block;
+  font-family: var(--mono);
+  font-size: .75rem;
+  line-height: 1.2rem;
+  color: var(--muted);
+}
+.tl-title {
+  margin: .1rem 0 .15rem;
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+.tl-org {
+  margin-bottom: .25rem;
+  font-size: .9rem;
+}
+.tl-desc {
+  margin-bottom: 0;
+  font-size: .9rem;
+  color: #202020;
+}
+.tl-details summary {
+  cursor: pointer;
+  font-size: .9rem;
+}
+.tl-details ul {
+  margin: .35rem 0 0;
+  font-size: .9rem;
+}
+
+@media (max-width: 48em) {
+  .tl-item {
+    --e: 1.9rem;
+    padding-left: 3rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .now-label::before {
+    animation: none;
   }
 }
