@@ -633,149 +633,234 @@ body,
   filter: none;
 }
 
-/*
- * Desktop frame layout: header and footer span the full width, the sidebar
- * sits between them, and the content box gets an outer outline joined to it
- * by diagonals at the corners.
- */
-@media (min-width: 48.01em) {
-  :root {
-    --head-h: 62px;
-    --foot-h: 50px;
-    --sidebar-w: 14rem;
-  }
-  .masthead {
-    position: relative;
-    z-index: 11;
-    height: var(--head-h);
-    margin-left: calc(-1 * var(--sidebar-w));
-    padding-left: var(--sidebar-w);
-  }
-  /* Sidebar tucks slightly under the footer so no stage pixels show between */
-  .sidebar {
-    top: var(--head-h);
-    bottom: calc(var(--foot-h) - 4px);
-  }
-  .footer {
-    z-index: 11;
-  }
-  /* Nav buttons: no dividers, 80% wide, centred */
-  .sidebar-nav {
-    border-bottom: none;
-    padding-top: .75rem;
-  }
-  .sidebar-nav-item,
-  .sidebar-nav-item:first-child {
-    width: 80%;
-    margin: 0 auto .25rem;
-    border-top: none;
-  }
-
-  /* Black frame: outer page edge, inner edge along the stage, mitred corners */
-  body {
-    border: 1px solid var(--ink);
-  }
-  /* Inner edge lines start at the stage corner, not over the sidebar */
-  .masthead::after,
-  .footer::after {
-    content: "";
-    position: absolute;
-    left: var(--sidebar-w);
-    right: 0;
-    height: 1px;
-    background: var(--ink);
-  }
-  .masthead::after {
-    bottom: 0;
-  }
-  .footer::after {
-    top: 0;
-  }
-  .sidebar {
-    border-right: 1px solid var(--ink);
-  }
-  .masthead::before,
-  .footer::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    width: var(--sidebar-w);
-    pointer-events: none;
-  }
-  /* Top-left mitre: page corner to stage corner */
-  .masthead::before {
-    top: 0;
-    bottom: 0;
-    background: linear-gradient(to top right, transparent calc(50% - .75px), var(--ink) calc(50% - .75px), var(--ink) calc(50% + .75px), transparent calc(50% + .75px));
-  }
-  /* Bottom-left mitre */
-  .footer::before {
-    top: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom right, transparent calc(50% - .75px), var(--ink) calc(50% - .75px), var(--ink) calc(50% + .75px), transparent calc(50% + .75px));
-  }
-}
-
-/*
- * Fractals & impossible geometry
- */
-
-/* Julia-set background (public/js/fractal.js); spectrogram stays as no-JS fallback */
-#fractal-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  display: block;
-  width: 100vw;
-  height: 100vh;
-  image-rendering: pixelated;
-  pointer-events: none;
-}
-.has-fractal .scroller {
-  background: none;
-  animation: none;
-}
-
-/* Koch-curve dividers instead of straight rules */
-.hero {
-  border-bottom: none;
-  padding-bottom: 2.5rem;
-  background: url("/images/koch.svg") left bottom / 54px auto repeat-x;
-}
+/* Koch-curve divider above related posts on post pages */
 .post-scroll .post {
   border-bottom: none;
   padding-bottom: 1.5rem;
   background: url("/images/koch.svg") left bottom / 54px auto repeat-x;
 }
 
-/* Desktop: the frame is shaded like a carved 3D frame lit from the top-left;
-   the mitre triangles take the sidebar tone so each panel ends at its diagonal */
+/*
+ * Desktop: the site frame drawn as an impossible object.
+ *
+ * Header, right strip, footer and sidebar are four beams around the stage.
+ * Each beam has a face line at fraction --f of its depth from the outer edge.
+ * At every corner one beam passes over the next (header over sidebar,
+ * right over header, footer over right, sidebar over footer), so the ring of
+ * overlaps never closes consistently, like a Penrose frame. The over-beam's
+ * face line runs through the corner to the page edge; the under-beam's face
+ * line and the inner half of the mitre stop where they meet it.
+ *
+ * All lines live in .frame-art, a fixed overlay above the panels.
+ */
+.frame-art,
+.frame-right,
+.title-block {
+  display: none;
+}
 @media (min-width: 48.01em) {
   :root {
-    --frame-top: #f2f2f2;
-    --frame-side: #e3e3e3;
-    --frame-bottom: #d4d4d4;
+    --head-h: 62px;
+    --foot-h: 50px;
+    --sidebar-w: 14rem;
+    --right-w: 2.5rem;
+    --f: .3;
+    --lw: 1px;
+  }
+  body {
+    border: 1px solid var(--ink);
   }
   .masthead {
-    background-color: var(--frame-top);
-  }
-  .theme-6dd .sidebar,
-  .sidebar {
-    background-color: var(--frame-side);
+    position: relative;
+    z-index: 11;
+    height: var(--head-h);
+    margin-left: calc(-1 * var(--sidebar-w));
+    margin-right: calc(-1 * var(--right-w));
+    padding: 24px var(--right-w) 0 var(--sidebar-w);
   }
   .footer {
-    background-color: var(--frame-bottom);
+    z-index: 11;
+    padding-top: 6px;
+    align-items: flex-start;
   }
-  .masthead::before {
-    background:
-      linear-gradient(to top right, transparent calc(50% - .75px), var(--ink) calc(50% - .75px), var(--ink) calc(50% + .75px), transparent calc(50% + .75px)),
-      linear-gradient(to top right, var(--frame-side) 50%, transparent 50%);
+  .wrap {
+    padding-right: var(--right-w);
   }
-  .footer::before {
+  /* Sidebar tucks slightly under the footer so no stage pixels show between */
+  .sidebar {
+    top: var(--head-h);
+    bottom: calc(var(--foot-h) - 4px);
+    padding: .75rem 10px 0 calc(var(--f) * var(--sidebar-w) + 10px);
+  }
+  .sidebar-nav {
+    border-bottom: none;
+  }
+  .sidebar-nav-item,
+  .sidebar-nav-item:first-child {
+    padding-left: .75rem;
+    padding-right: .75rem;
+    margin-bottom: .25rem;
+    border-top: none;
+  }
+  .sidebar-links {
+    padding-left: .75rem !important;
+  }
+  .sidebar-item {
+    padding-left: .75rem;
+    padding-right: 0;
+  }
+  .frame-right {
+    display: block;
+    position: fixed;
+    z-index: 10;
+    top: var(--head-h);
+    bottom: calc(var(--foot-h) - 4px);
+    right: 0;
+    width: var(--right-w);
+    background: var(--frame);
+  }
+
+  .frame-art {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    pointer-events: none;
+  }
+  .frame-art span {
+    position: absolute;
+  }
+  /* Inner edge of the frame around the stage */
+  .fa-stage {
+    top: var(--head-h);
+    bottom: var(--foot-h);
+    left: var(--sidebar-w);
+    right: var(--right-w);
+    border: var(--lw) solid var(--ink);
+  }
+  /* Face lines */
+  .fa-top {
+    top: calc(var(--f) * var(--head-h));
+    left: 0;
+    right: calc(var(--f) * var(--right-w));
+    border-top: var(--lw) solid var(--ink);
+  }
+  .fa-right {
+    top: 0;
+    bottom: calc(var(--f) * var(--foot-h));
+    right: calc(var(--f) * var(--right-w));
+    border-left: var(--lw) solid var(--ink);
+  }
+  .fa-bottom {
+    bottom: calc(var(--f) * var(--foot-h));
+    left: calc(var(--f) * var(--sidebar-w));
+    right: 0;
+    border-top: var(--lw) solid var(--ink);
+  }
+  .fa-left {
+    top: calc(var(--f) * var(--head-h));
+    bottom: 0;
+    left: calc(var(--f) * var(--sidebar-w));
+    border-left: var(--lw) solid var(--ink);
+  }
+  /* Inner halves of the corner mitres, from each stage corner to the face-line joint */
+  .fa-tl,
+  .fa-tr,
+  .fa-br,
+  .fa-bl {
+    --line: transparent calc(50% - .6px), var(--ink) calc(50% - .6px), var(--ink) calc(50% + .6px), transparent calc(50% + .6px);
+  }
+  .fa-tl,
+  .fa-bl {
+    left: calc(var(--f) * var(--sidebar-w));
+    width: calc((1 - var(--f)) * var(--sidebar-w));
+  }
+  .fa-tr,
+  .fa-br {
+    right: calc(var(--f) * var(--right-w));
+    width: calc((1 - var(--f)) * var(--right-w));
+  }
+  .fa-tl,
+  .fa-tr {
+    top: calc(var(--f) * var(--head-h));
+    height: calc((1 - var(--f)) * var(--head-h));
+  }
+  .fa-bl,
+  .fa-br {
+    bottom: calc(var(--f) * var(--foot-h));
+    height: calc((1 - var(--f)) * var(--foot-h));
+  }
+  .fa-tl,
+  .fa-br {
+    background: linear-gradient(to top right, var(--line));
+  }
+  .fa-tr,
+  .fa-bl {
+    background: linear-gradient(to bottom right, var(--line));
+  }
+
+  /* Drawing title block in the footer */
+  .title-block {
+    position: absolute;
+    right: calc(var(--right-w) + 10px);
+    top: 5px;
+    display: flex;
+    border: 1px solid var(--ink);
+    background: var(--frame);
+    font-family: var(--mono);
+    font-size: .55rem;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }
+  .title-block span {
+    padding: .2rem .45rem;
+    border-left: 1px solid var(--ink);
+  }
+  .title-block span:first-child {
+    border-left: none;
+  }
+  .title-block b {
+    display: block;
+    margin-bottom: .15rem;
+    font-weight: 400;
+    font-size: .45rem;
+    color: var(--muted);
+  }
+
+  /* Dimension line above the content box (architectural ticks) */
+  .container.content {
+    position: relative;
+  }
+  .container.content::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    height: 11px;
+    pointer-events: none;
+    --tick: transparent calc(50% - .6px), rgba(255, 255, 255, .75) calc(50% - .6px), rgba(255, 255, 255, .75) calc(50% + .6px), transparent calc(50% + .6px);
     background:
-      linear-gradient(to bottom right, transparent calc(50% - .75px), var(--ink) calc(50% - .75px), var(--ink) calc(50% + .75px), transparent calc(50% + .75px)),
-      linear-gradient(to bottom right, var(--frame-side) 50%, transparent 50%);
+      linear-gradient(rgba(255, 255, 255, .75), rgba(255, 255, 255, .75)) center / 100% 1px no-repeat,
+      linear-gradient(to top right, var(--tick)) left center / 11px 11px no-repeat,
+      linear-gradient(to top right, var(--tick)) right center / 11px 11px no-repeat,
+      linear-gradient(rgba(255, 255, 255, .75), rgba(255, 255, 255, .75)) left bottom / 1px 20px no-repeat,
+      linear-gradient(rgba(255, 255, 255, .75), rgba(255, 255, 255, .75)) right bottom / 1px 20px no-repeat;
+  }
+  .container.content::after {
+    content: "max 60 rem";
+    position: absolute;
+    top: -26px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 .5rem;
+    background: #0b0b0b;
+    color: rgba(255, 255, 255, .8);
+    font-family: var(--mono);
+    font-size: .6rem;
+    line-height: 12px;
+    pointer-events: none;
   }
 }
 

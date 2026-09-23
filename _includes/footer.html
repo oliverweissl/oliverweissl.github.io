@@ -1,4 +1,9 @@
 <div class="footer">
     <a href="{{ site.theme.link }}" target="_blank" title="naringu">Checkout the Original: {{ site.theme.codename }}</a>&nbsp; Copyright © {{ site.time | date: '%Y' }} <br>
+    <div class="title-block" aria-hidden="true">
+      <span><b>drawn</b>O. Weißl</span>
+      <span><b>title</b>{{ page.title | default: site.title }}</span>
+      <span><b>scale</b>1 : 1</span>
+      <span><b>date</b>{{ site.time | date: '%Y-%m-%d' }}</span>
+    </div>
 </div>
-
