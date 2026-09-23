@@ -4,6 +4,7 @@ title: Interactive embodied evolution for socially adept Artificial General Crea
 authors: Kevin Godin-Dubois, Oliver Weissl, Karine Miras, Anna V. Kononova
 link: https://arxiv.org/abs/2407.21357
 permalink: /conference/workshop/2024/07/31/interactive/
+venue: "ALife 2024 Workshop"
 categories:
 - workshop-paper
 ---

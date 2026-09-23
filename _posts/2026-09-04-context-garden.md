@@ -4,6 +4,7 @@ title: "Context Garden: Trimming the Weeds from Your Agent's Context"
 authors: Oliver Weißl
 link: https://github.com/oliverweissl/context-garden
 button_label: To the repository
+venue: "GitHub"
 categories:
 - project
 ---

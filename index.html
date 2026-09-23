@@ -3,17 +3,60 @@ layout: default
 title: Home
 ---
 
+{% assign paper_count = 0 %}
+{% assign peer_count = 0 %}
+{% assign project_count = 0 %}
+{% for post in site.posts %}
+  {% if post.categories contains "project" %}
+    {% assign project_count = project_count | plus: 1 %}
+  {% else %}
+    {% assign paper_count = paper_count | plus: 1 %}
+    {% unless post.categories contains "preprint" %}
+      {% assign peer_count = peer_count | plus: 1 %}
+    {% endunless %}
+  {% endif %}
+{% endfor %}
+{% assign walk_labels = "Original,Fine layers,Medium layers,Coarse layers,Target" | split: "," %}
+
 <div class="posts scrollable-content">
+  <section class="hero">
+    <div class="hero-text">
+      <p class="hero-kicker">// research</p>
+      <h1 class="hero-title">Testing deep learning systems through the latent spaces of generative models.</h1>
+      <p class="hero-stats">
+        <span><b>{{ paper_count }}</b> papers</span>
+        <span><b>{{ peer_count }}</b> peer-reviewed</span>
+        <span><b>{{ project_count }}</b> open-source {% if project_count == 1 %}project{% else %}projects{% endif %}</span>
+      </p>
+    </div>
+    <figure class="latent-walk">
+      <div class="latent-walk-frames">
+        {% for label in walk_labels %}
+        <div class="latent-walk-frame" style="--i: {{ forloop.index0 }}">
+          <img src="{{ '/images/latent-walk/' | append: forloop.index0 | append: '.png' | relative_url }}" alt="{{ label }}" width="128" height="128">
+          <span>{{ label }}</span>
+        </div>
+        {% endfor %}
+      </div>
+      <figcaption>Style mixing across StyleGAN layers, car &rarr; truck. From <a href="/papers/journal/2025/05/11/targeted/">Mimicry</a>.</figcaption>
+    </figure>
+  </section>
+
   {% for post in site.posts %}
-  <div class="post">
-    <h1 class="post-title full-width-title">
-      <a href="{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
-    <span class="post-date">{{ post.date | date_to_string }}</span><br>
-    <p>{{ post.excerpt | strip_html | truncate: 500 }}</p>
-  </div>
+  <article class="post-card">
+    {% if post.teaser %}
+    <div class="post-card-teaser">
+      <img src="{{ post.teaser | relative_url }}" alt="" loading="lazy">
+    </div>
+    {% endif %}
+    <div class="post-card-meta">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+      {% if post.venue %}<span class="venue-chip">{{ post.venue }}</span>{% endif %}
+      {% for category in post.categories %}<span class="category-tag">{{ category | replace: '-', ' ' }}</span>{% endfor %}
+    </div>
+    <h2 class="post-card-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+    <p class="post-card-authors">{% include authors.html authors=post.authors %}</p>
+    <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 240 }}</p>
+  </article>
   {% endfor %}
 </div>
-
