@@ -4,7 +4,6 @@ title: "CodeTransBenchmark: Evaluating LLM-based Code Translation and Repair Acr
 authors: Vera Kowalczuk, Oliver Weißl, Severin Kacianka, Andrea Stocco
 link: https://arxiv.org/abs/2609.20257
 categories:
-- papers
 - preprint
 ---
 In this work, we study how well Large Language Models translate code between programming languages and how well they repair their own translation errors. We present CodeTransBenchmark, a framework for evaluating LLM-based translation and repair, and evaluate eight models on three datasets and 12 language pairs.

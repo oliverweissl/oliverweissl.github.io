@@ -6,7 +6,6 @@ link: https://github.com/oliverweissl/context-garden
 button_label: To the repository
 categories:
 - project
-- open-source
 ---
 I started a new open-source project: [Context Garden](https://github.com/oliverweissl/context-garden), a collection of self-contained Agent Skills that cut an agent's context usage. The skills are deterministic, run fully offline, and make no LLM calls inside the tooling itself. They are most useful for extended coding sessions in bigger repositories, where context quickly fills up with repeated exploration and noisy tool output.
 

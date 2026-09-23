@@ -3,9 +3,9 @@ layout: post
 title: Interactive embodied evolution for socially adept Artificial General Creatures
 authors: Kevin Godin-Dubois, Oliver Weissl, Karine Miras, Anna V. Kononova
 link: https://arxiv.org/abs/2407.21357
+permalink: /conference/workshop/2024/07/31/interactive/
 categories:
-- conference
-- workshop
+- workshop-paper
 ---
 
 I worked with [Dr. Kevin Godin-Dubois](https://scholar.google.com/citations?user=8k1MH20AAAAJ) on realising a concept towards 'Artificial General Creatures'. This work was presented as part of the __Evolution of Things__ workshop at [ALife2024](https://2024.alife.org/).
