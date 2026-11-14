@@ -23,10 +23,16 @@ title: Home
     <div class="hero-text">
       <p class="hero-kicker">// research</p>
       <h1 class="hero-title">Generating test inputs for AI-enabled systems.</h1>
+      <p class="hero-lead">I'm Oliver Weißl (also written Weissl), a PhD candidate at TUM and Senior Data Scientist at NorCom. I use generative models to find the inputs where deep learning, vision-language and speech systems fail.</p>
       <p class="hero-stats">
         <span><b>{{ paper_count }}</b> papers</span>
         <span><b>{{ peer_count }}</b> peer-reviewed</span>
         <span><b>{{ project_count }}</b> open-source {% if project_count == 1 %}project{% else %}projects{% endif %}</span>
+      </p>
+      <p class="hero-cta">
+        <a class="action-button action-button-primary" href="/files/Oliver_Weissl_CV.pdf" target="_blank" rel="noopener"><i class="fa-regular fa-file-lines" aria-hidden="true"></i> CV</a>
+        <a class="action-button" href="https://scholar.google.com/citations?user=moL6gxwAAAAJ&hl=en" target="_blank" rel="noopener"><i class="fa-brands fa-google-scholar" aria-hidden="true"></i> Scholar</a>
+        <a class="action-button" href="mailto:o.weissl@tum.de"><i class="fa-regular fa-envelope" aria-hidden="true"></i> Contact</a>
       </p>
     </div>
     <figure class="latent-walk">
@@ -46,11 +52,11 @@ title: Home
   <article class="post-card">
     {% if post.teaser %}
     <div class="post-card-teaser">
-      <img src="{{ post.teaser | relative_url }}" alt="" loading="lazy">
+      <img src="{{ post.teaser | relative_url }}" alt="{{ post.title | escape }}" loading="lazy">
     </div>
     {% elsif post.teaser_row %}
     <div class="post-card-teaser post-card-teaser-row">
-      {% for image in post.teaser_row %}<img src="{{ image | relative_url }}" alt="" loading="lazy">{% endfor %}
+      {% for image in post.teaser_row %}<img src="{{ image | relative_url }}" alt="{{ post.title | escape }}" loading="lazy">{% endfor %}
     </div>
     {% endif %}
     <div class="post-card-meta">

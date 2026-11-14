@@ -12,10 +12,11 @@ permalink:           pretty
 # Setup
 title:               Oliver Weissl
 tagline:             'Senior Data Scientist & PhD Candidate'
-description:         ''
+description:         'Oliver Weißl is a PhD candidate at the Technical University of Munich (TUM) and Senior Data Scientist at NorCom. His research is on test input generation for AI-enabled systems: generative testing of deep learning models, vision-language models and speech recognition.'
+lang:                en
+social_image:        /images/portrait.jpeg
 url:                 https://oliverweissl.github.io
 baseurl:             ''
-paginate:            5
 
 # Ensure public directory is included in build
 include:

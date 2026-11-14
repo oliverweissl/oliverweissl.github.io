@@ -1,10 +1,12 @@
 ---
 title: About
+seo_title: About Oliver Weißl, PhD Candidate at TUM
+description: Oliver Weißl (Weissl) is a PhD candidate at the Technical University of Munich and Senior Data Scientist at NorCom, researching test input generation for AI-enabled systems. Timeline, education and contact.
 author: oliverweissl
 layout: page
 ---
 
-<img alt="" src="/images/portrait.jpeg" width="175" height="175" class="portrait-float" />
+<img alt="Portrait of Oliver Weißl" src="/images/portrait.jpeg" width="175" height="175" class="portrait-float" />
 
 Hello, I'm Oliver Weißl, a Senior Data Scientist at [NorCom](https://www.norcom.de/) and a PhD candidate at the Technical University of Munich (TUM). Previously, I was a researcher at fortiss GmbH. My academic journey began with a Bachelor's degree in Artificial Intelligence from Vrije Universiteit (VU) Amsterdam, followed by a Master's in Information Studies at the University of Amsterdam (UvA).
 
